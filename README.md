@@ -25,6 +25,8 @@ Para esta conexión se puede hacer por dos vias la primera es configurar manualm
 ```
 ssh robot@<Dirección IP del robot>
 ```
+**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot
+
 #### Pruebas de motores
 Si desea probar el funcionamiento de motores por el terminal puede conectar los motores en los puestos A y D del robot y corra el siguente comando el cual movera las dos ruedas con una velocidad de 50 grados/s sin frenado
 
@@ -46,7 +48,7 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent
 
 ```
 
-**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot
+
 
 ## Otros links de interes
 * [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
