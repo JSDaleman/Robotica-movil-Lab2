@@ -25,5 +25,10 @@ Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD
 * [Uso de sensor lidar con Ev3](https://www.youtube.com/watch?v=JX0zeYa-faM) 
 * [Programacion y conexion SSH desde Visual Studio Code con Ev3](https://www.youtube.com/watch?v=uNSIOvqzAnY) 
 * [Instalacion de ROS distribucion JADE en el Ev3](https://github.com/osmado/ev3dev_ros_distribution) 
-
+* [ROS blog sobre lego Ev3](http://wiki.ros.org/Robots/EV3)
+* [Conexión Ev3 y arduino](https://www.dexterindustries.com/howto/connecting-ev3-arduino/)
+* [Manejo con ROS de Ev3 con C++](https://www.youtube.com/watch?v=iRQqEKYDRI4)
+* [Github manejo con ROS de Ev3 con C++](https://github.com/srmanikandasriram/ev3-ros?tab=readme-ov-file)
+* [Libreria de Python de ev3dev](https://github.com/ev3dev/ev3dev-lang-python)
+* [Libreria de C++ de ev3dev](https://github.com/ddemidov/ev3dev-lang-cpp)
 
