@@ -25,7 +25,7 @@ Para esta conexión se puede hacer por dos vias la primera es configurar manualm
 ```
 ssh robot@<Dirección IP del robot>
 ```
-**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot y el password es "maker"
+**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot y el password es "maker".
 
 #### Pruebas de motores
 Si desea probar el funcionamiento de motores por el terminal puede conectar los motores en los puestos A y D del robot y corra el siguente comando el cual movera las dos ruedas con una velocidad de 50 grados/s sin frenado
