@@ -47,6 +47,27 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_A, OUTPUT_D); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5); tank_drive.off(brake=True)"
 
 ```
+### Preparación de entorno e intalacion de librerias y paquetes
+
+Lo primero sera la intalación de paquetes que permitan el manejo del Ev3 con ROS en la terminal correremos los siguentes comandos para instalar el paquete 'ev3_ros'. en distro en nuestro caso ponemos la noetic
+```
+sudo apt-get update
+sudo apt-get install ros-<distro>-ev3-ros
+
+```
+
+#### Confirmar vesion de ros instalada
+
+Si es necesario verificar que distribución se tiene actualmentee se puede hacer con los siguentes comandos
+
+```
+rosversion -d
+```
+ tambien puede verificar la versión con el comando
+
+```
+rosversion -v
+```
 
 
 
