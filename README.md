@@ -109,8 +109,13 @@ cd build
 cmake ..
 sudo make install
 ```
-
-
+#### Configuración de comunicación de ROS y el ev3
+Ahora configuraremos las variables de entorno de tal forma que aseguremos la conexión entre ros y el ev3
+```
+export ROS_MASTER_URI=http://<dirección_IP_del_EV3>:11311
+export ROS_HOSTNAME=<dirección_IP_de_tu_PC>
+```
+**Nota:** Para poder conocer la dirección IP de su PC se puede con el comando ifconfig
 
 ## Otros links de interes
 * [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
