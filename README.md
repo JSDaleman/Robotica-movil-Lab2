@@ -200,6 +200,7 @@ Ahora convertiremos el script en un ejecutable, con los siguientes comando y dar
 ```
 cd ~
 cd catkin_ws/
+catkin_make
 source devel/setup.bash
 cd src/ev3dev_ros/scripts/
 chmod u+x Square.py
