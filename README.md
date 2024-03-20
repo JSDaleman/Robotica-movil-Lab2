@@ -49,6 +49,8 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent
 ```
 ### Preparación de entorno e intalacion de librerias y paquetes
 
+#### Paquete de control de ev3 con ros
+
 Lo primero sera la intalación de paquetes que permitan el manejo del Ev3 con ROS en la terminal correremos los siguentes comandos para instalar el paquete 'ev3_ros'. en distro en nuestro caso ponemos la noetic
 ```
 sudo apt-get update
@@ -56,7 +58,7 @@ sudo apt-get install ros-<distro>-ev3-ros
 
 ```
 
-#### Confirmar vesion de ros instalada
+##### Confirmar vesion de ros instalada
 
 Si es necesario verificar que distribución se tiene actualmentee se puede hacer con los siguentes comandos
 
@@ -67,6 +69,45 @@ rosversion -d
 
 ```
 rosversion -v
+```
+
+#### Creacion del workspace
+
+Para esto crearemos un directrotio que sera nuestro workspace y tendra nuestros archivos de intalación
+
+```
+cd ~
+mkdir catkin_ws
+cd catkin_ws
+mkdir src
+catkin build
+cd src
+catkin_create_pkg ev3dev_ros
+cd ev3dev_ros
+```
+
+#### Intalacion de libreria de python
+
+Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
+
+```
+git clone https://github.com/ev3dev/ev3dev-lang-python.git
+cd ev3dev-lang-python
+sudo python3 setup.py install
+cd ..
+```
+
+#### Intalacion de libreria C++
+
+Para la instalacion de la libreria en C++ descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
+
+```
+git clone https://github.com/ddemidov/ev3dev-lang-cpp.git
+cd ev3dev-lang-cpp
+mkdir build
+cd build
+cmake ..
+sudo make install
 ```
 
 
