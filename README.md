@@ -117,6 +117,108 @@ export ROS_HOSTNAME=<dirección_IP_de_tu_PC>
 ```
 **Nota:** Para poder conocer la dirección IP de su PC se puede con el comando ifconfig
 
+### Creación de scrip en python de ejemplo y convertilo en ejecutable
+
+Iremos a la caprta de src y en esta crearemos un directorio para scripts y dentro de este crearemos nuestro script para que el robot siga la trayectoria de un cuadrado usando el giro sensor. 
+
+```
+cd ~
+cd catkin_ws/src/ev3dev_ros/
+mkdir scripts
+code .
+```
+Con esto abriremos visual studio code y podremos crear el siguiente script titulado Square.py
+
+```
+#!/usr/bin/env python3
+
+import rospy
+from geometry_msgs.msg import Twist
+from sensor_msgs.msg import Imu
+import time
+
+# Definir las variables globales
+robot_twist = Twist()
+gyro_angle = 0
+
+# Función de callback para obtener el ángulo del giroscopio
+def gyro_callback(msg):
+    global gyro_angle
+    # Suponiendo que el mensaje Imu contiene el ángulo en el eje Z
+    gyro_angle = msg.angular_velocity.z
+
+# Función para avanzar
+def avanzar():
+    robot_twist.linear.x = 0.2
+    robot_twist.angular.z = 0.0
+
+# Función para girar a la derecha
+def girar_derecha():
+    robot_twist.linear.x = 0.0
+    robot_twist.angular.z = -0.5
+
+# Función principal
+def main():
+    rospy.init_node('robot_control_node')
+    rate = rospy.Rate(10)  # Frecuencia de publicación de 10 Hz
+    
+    # Suscribirse al tema del giroscopio
+    rospy.Subscriber('/imu', Imu, gyro_callback)
+
+    # Publicar en el tema de movimiento
+    twist_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+
+    try:
+        for _ in range(4):  # Ejecutar 4 veces
+            # Avanzar durante 5 segundos
+            avanzar()
+            time.sleep(5)
+            
+            # Detener y girar 90 grados
+            robot_twist = Twist()
+            twist_pub.publish(robot_twist)
+            current_angle = gyro_angle
+            target_angle = current_angle + 90
+            while current_angle < target_angle:
+                girar_derecha()
+                twist_pub.publish(robot_twist)
+                rate.sleep()
+                current_angle = gyro_angle
+            robot_twist = Twist()
+            twist_pub.publish(robot_twist)
+
+    finally:
+        # Asegurarse de que el robot se detenga al finalizar
+        robot_twist = Twist()
+        twist_pub.publish(robot_twist)
+
+if __name__ == "__main__":
+    main()
+```
+Ahora convertiremos el script en un ejecutable, con los siguientes comando y daremos acceso al usuario y se volvera el archivo ejecutable
+
+```
+cd ~
+cd catkin_ws/
+source devel/setup.bash
+cd src/ev3dev_ros/scripts/
+chmod u+x Square.py
+```
+
+### Pruebas de funcionamiento
+
+En un nuvo terminal correremos el nodo principal de ROS con el comando 
+```
+roscore
+```
+En otro terminal tendremos la comunicacion SSH con el robot como se mostro en la sección anterior y en otra correremos el nodo para el script.
+
+```
+rosrun ev3dev_ros Square.py
+```
+
+Con esto veremos como el robot hace una trayectoria que sigue un cuadrado.
+
 ## Otros links de interes
 * [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
 * [ROS desde el Lego Ev3](https://github.com/moriarty/ros-ev3) 
