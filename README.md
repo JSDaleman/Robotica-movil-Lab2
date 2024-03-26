@@ -28,23 +28,23 @@ ssh robot@<Dirección IP del robot>
 **Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot y el password es "maker".
 
 #### Pruebas de motores
-Si desea probar el funcionamiento de motores por el terminal puede conectar los motores en los puestos A y D del robot y corra el siguente comando el cual movera las dos ruedas con una velocidad de 50 grados/s sin frenado
+Si desea probar el funcionamiento de motores por el terminal puede conectar los motores en los puestos B y C del robot y corra el siguente comando el cual movera las dos ruedas con una velocidad de 50 grados/s sin frenado
 
 ```
-python3 -c "from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_D; LargeMotor(OUTPUT_A).on_for_seconds(speed=50, seconds=2); LargeMotor(OUTPUT_D).on_for_seconds(speed=50, seconds=2)"
+python3 -c "from ev3dev2.motor import LargeMotor, OUTPUT_B, OUTPUT_C; LargeMotor(OUTPUT_B).on_for_seconds(speed=50, seconds=2); LargeMotor(OUTPUT_C).on_for_seconds(speed=50, seconds=2)"
 ```
 * prueba con frenadao
 ```
-python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_A, OUTPUT_D); tank_drive.on_for_seconds(left_speed=50, right_speed=50, seconds=5, brake=True)"
+python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=50, seconds=5, brake=True)"
 ```
 
 * Giro del robot
 ```
-python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_A, OUTPUT_D); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5, brake=True)"
+python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5, brake=True)"
 ```
 * frenado suave
 ```
-python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_A, OUTPUT_D, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_A, OUTPUT_D); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5); tank_drive.off(brake=True)"
+python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5); tank_drive.off(brake=True)"
 
 ```
 ### Preparación de entorno e intalacion de librerias y paquetes
