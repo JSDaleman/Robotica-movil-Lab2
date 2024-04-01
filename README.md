@@ -7,6 +7,56 @@ Luis Alejandro Duran Espitia
 
 Santiago Olaya
 
+## ¿Qué es ROS? 
+
+ROS es un meta sistema operativo de código abierto para tu robot. Provee de servicios que se esperarían de un sistema operativo, incluyendo abstracción de hardware, control de dispositivos de bajo nivel, implementación de funcionalidades comunes, pasaje de mensaje entre procesos y manejo de paquetes. También brinda herramientas y librerías para obtener, construir, escribir y correr código a través y mediante varias computadoras. ROS es similar a otras estructuras o armazones para robot como Player, YARP, Orocos, CARMEN, Orca, MOOS, y Microsoft Robotics Studio. [1]
+
+Al ser un sistema muy versartil al tener una contruccion modular permite una alta adaptabilidad a los diferentes proyectos que se desarrollen, por su ampllio uso ROS cuenta con una comunidad muy amplia dando un alto acceso a diferentes bibliotecas, paketes, documentacion y soporte para diferentes problemas. Por la alta disponibilidad de librerias y paquetes se puede hacer un facil reuso de codigo lo que permite hacer dasarrollos más rapidamente además de poseer diversas herramientas para visualizar y depurar el comportamiento de los robots en tiempo real, lo que facilita el desarrollo y la depuración de aplicaciones robóticas complejas. Poir ultimo su comtabilidad con diferentes sistemas operativos permite su manejo en sistemas linux, masOS y windows.
+
+## Comandos para rosnode, rostopic, rosservice,rosmsg, rospack
+
+### rosnode
+  * rosnode ping Permite probar la conectividad al nodo.
+  * rosnode list Muesta la lista de nodos activos.
+  * rosnode info Imprime la información del nodo.
+  * rosnode machine Muesta la lista de nodos activos en la maquina.
+  * rosnode kill Termina el proceso de un nodo activo.
+
+### rostopic
+  * rostopic bw Muestra el ancho de banda usado por el topico.
+  * rostopic echo Imprime mensaje en la pantalla.
+  * rostopic find Busca un topico por su tema.
+  * rostopic hz Muestra la tasa de publicación del tema.
+  * rostopic info Imprime información sobre un tema activo.
+  * rostopic list Muesta la lista de todos los temas publicados.
+  * rostopic pub Publica la información al tema.
+  * rostopic type Imprime el tipo del tema.
+
+### rosservice
+  * rosservice list Imprime informacion sobre el servicio activo.
+  * rosservice node Imprime el nombre del nodo proveniente de un servicio.
+  * rosservice call Llama el servicio con los argumentos dados.
+  * rosservice args Muesta la lista de argumentos de un servicio.
+  * rosservice type Imprime el tipo del servicio.
+  * rosservice uri Imprime el servico ROSRPC uri.
+  * rosservice find Busca el servicio por el tipo de servicio.
+
+### rossmsg
+  * rosmsg show Muestra los campos en el msg/srv.
+  * rosmsg list Muestra los nombres de todos los msg/srv. 
+  * rosmsg md5 Muestra el msg/srv md5 sum. 
+  * rosmsg package Muestra la lista de todos los msg/srv en un paquete.
+  * rosmsg packages Muestra la lista de todos los paquetes que contienen el msg/srv.
+
+
+### rospack
+  * rospack Busca y recupera la informacion sobre los paquetes.
+  * catkin_create_pkg Crea un nuevo paquete.
+  * catkin_make Construyeun espacio de trabajo de paquetes.
+  * rosdep Instala dependencias del sistema de un paquete.
+  * rqt En un rqt existe una extencion llamada "Introspection/Package Graph", la cual visualiza las dependencias de paquetes como un grafico. 
+
+
 ## Conexión Lego EV3 con ROS
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
 * [Seleccion de SD](https://github.com/ev3dev/ev3dev/wiki/Selecting-a-microSD-card)
@@ -235,3 +285,6 @@ Con esto veremos como el robot hace una trayectoria que sigue un cuadrado.
 * [Libreria de Python de ev3dev](https://github.com/ev3dev/ev3dev-lang-python)
 * [Libreria de C++ de ev3dev](https://github.com/ddemidov/ev3dev-lang-cpp)
 
+## Referencias 
+
+[1] ROS Wiki, "ROS/Introducción," [En línea]. Disponible en: http://wiki.ros.org/es/ROS/Introduccion. [Accedido el: 31 03 2024].
