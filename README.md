@@ -54,8 +54,15 @@ Al ser un sistema muy versartil al tener una contruccion modular permite una alt
   * catkin_create_pkg Crea un nuevo paquete.
   * catkin_make Construyeun espacio de trabajo de paquetes.
   * rosdep Instala dependencias del sistema de un paquete.
-  * rqt En un rqt existe una extencion llamada "Introspection/Package Graph", la cual visualiza las dependencias de paquetes como un grafico. 
+  * rqt En un rqt existe una extencion llamada "Introspection/Package Graph", la cual visualiza las dependencias de paquetes como un grafico.
 
+## ¿Qué hacen los progrmas de python?
+
+## Plano donde el Turtlesim puede moverse
+
+## Como usar algún servicio en Python
+
+## Servicio spawn
 
 ## Conexión Lego EV3 con ROS
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
