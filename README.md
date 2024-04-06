@@ -82,7 +82,7 @@ Para esta conexión se puede hacer por dos vias la primera es configurar manualm
 ```
 ssh robot@<Dirección IP del robot>
 ```
-**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot y el password es "maker".
+**Nota:** La dirrección IP asignada al robot se puede ver en la parte superior a la izquierda del robot y el password es "maker" se puede usar tambien el comado ```ssh robot@ev3dev.local ``` pero al habero otros robots conectados o por configuración DNS de la red wifi puede generar algún error.
 
 #### Pruebas de motores
 Si desea probar el funcionamiento de motores por el terminal puede conectar los motores en los puestos B y C del robot y corra el siguente comando el cual movera las dos ruedas con una velocidad de 50 grados/s sin frenado premero la del motor conectado al puerto C y luego la del motor conectado al puerto C.
@@ -263,6 +263,7 @@ source devel/setup.bash
 cd src/ev3dev_ros/scripts/
 chmod u+x Square.py
 ```
+
 
 ### Pruebas de funcionamiento
 
