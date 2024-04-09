@@ -62,7 +62,150 @@ Al ser un sistema muy versartil al tener una contruccion modular permite una alt
 
 ## Como usar algún servicio en Python
 
+Los servicios ROS están definidos por archivos srv, que contienen un mensaje de solicitud y un mensaje de respuesta, rospy convierte estos archivos srv en código fuente Python y crea tres clases: definiciones de servicios, mensajes de solicitud y mensajes de respuesta.
+
+Supongamos que se tiene un servicio llamado add_two_ints que toma dos números enteros como entrada y devuelve su suma como salida. Aquí hay un ejemplo paso a paso de cómo usar este servicio en Python:
+
+1. Importar los módulos necesarios:
+```
+import rospy
+from std_srvs.srv import Trigger, TriggerResponse
+from std_msgs.msg import String
+```
+2. Iniciar el nodo ROS:
+```
+rospy.init_node('service_client_node')
+```
+3. Esperar a que el servicio esté disponible:
+```
+rospy.wait_for_service('add_two_ints')
+```
+4. Crear un objeto de servicio que llame al servicio deseado:
+```
+add_two_ints = rospy.ServiceProxy('add_two_ints', AddTwoInts)
+```
+5.Llamar al servicio con los argumentos necesarios:
+```
+# Forma explicita
+req = rospy_tutorials.srv.AddTwoIntsRequest(1, 2)
+resp = add_two_ints(req)
+# Forma implicita con argumentos en orden
+resp = add_two_ints(1, 2)
+# Forma implicita con argumentos de palabras clave
+resp = add_two_ints(a=1)
+```
+6. Procesar la respuesta:
+```
+print("La suma de dos enteros es:", response.sum)
+
+```
+7. Cerrar el servicio:
+```
+# Detener explícitamente un servicio:
+s.shutdown('shutdown reason')
+# Esperar a que se apague:
+s.spin()
+```
 ## Servicio spawn
+
+Se usara el servicio Spawm para hacer para aparecer otra tortuga y realice un programa en Python que haga que las tortugas dibujen un triángulo y un cuadrado.
+
+1. Iniciar el nucleo principal de ROS:
+```
+roscore
+```
+2. Crear los archivos:
+
+   Primer el archivo, es el archivo de Python encargado de dibujar el cuadrado y triángulo con cada una de las tortugas.
+   CT.py
+   ```
+   #!/usr/bin/env python
+
+   import rospy
+   from turtlesim.srv import TeleportAbsolute
+   from std_srvs.srv import Empty
+
+   if __name__ == '__main__':
+	    rospy.init_node('turtlesimservice', anonymous=False)
+
+     #Define la primera tortuga
+	    rospy.wait_for_service('turtle1/teleport_absolute')
+	    turtle1_teleport = rospy.ServiceProxy('turtle1/teleport_absolute',
+		   TeleportAbsolute)
+
+     #Define la segunda tortuga
+	    rospy.wait_for_service('turtle2/teleport_absolute')
+	    turtle2_teleport = rospy.ServiceProxy('turtle2/teleport_absolute',
+		   TeleportAbsolute)
+	
+	    rospy.wait_for_service('clear')
+	    clear1 = rospy.ServiceProxy('clear', Empty)
+
+
+	    rate = rospy.Rate(0.3)
+
+     #Posicion de las tortugas
+	    pos1=1
+	    pos2=1
+	    # Similar to while(ros::ok())
+     #Bucle
+	    while not rospy.is_shutdown():
+     #Cuadrado
+		      if (pos1==1):
+			       resp1 = turtle1_teleport(4, 5, 0)
+			       clear1()
+		      if (pos1==2):
+			       resp1 = turtle1_teleport(4, 10, 0)
+		      if (pos1==3):
+			       resp1 = turtle1_teleport(8, 10, 0)
+		      if (pos1==4):
+			       resp1 = turtle1_teleport(8, 5, 0)
+		      if (pos1==5):
+			       resp1 = turtle1_teleport(4, 5, 0)
+		      if (pos1>5):
+			       pos1=1
+		      pos1+=1
+
+      #Triangulo
+		      if (pos2==1):
+			       resp2 = turtle2_teleport(3, 5, 0)
+			       clear1()
+		      if (pos2==2):
+			       resp2 = turtle2_teleport(3, 11, 0)
+		      if (pos2==3):
+			       resp2 = turtle2_teleport(0, 7, 0)
+		      if (pos2==4):
+			       resp2 = turtle2_teleport(3, 5, 0)
+		      if (pos2>4):
+			       pos2=1
+		      pos2+=1
+	
+   rate.sleep()
+   ```
+   Segundo archivo, es el launch para ejecutar todas las tareas.
+   ```
+   <launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle" />
+    <node pkg="pruebas" type="CT.py" name="CT_node" output="screen" />
+   </launch>
+   ```
+3. Ejecución
+   
+   En la consola se ejecuntan los siguientes comandos:
+   ```
+   roslaunch pruebas CT.launch
+   ```
+   Para aparecer otra tortuga
+   ```
+   rosservice call /spawn 4 5 0 turtle2
+   ```
+
+   Resultados:
+
+   
+ ![Resultado](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/83f2dcec-3f68-4caa-973c-f2fb6356e63e)
+
+
 
 ## Conexión Lego EV3 con ROS
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
