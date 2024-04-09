@@ -116,8 +116,8 @@ roscore
 ```
 2. Crear los archivos:
 
-   Primer el archivo, es el archivo de Python encargado de dibujar el cuadrado y triángulo con cada una de las tortugas.
-   CT.py
+   El primer archivo, CT.py es el archivo de Python encargado de dibujar el cuadrado y triángulo con cada una de las tortugas.
+   
    ```
    #!/usr/bin/env python
 
