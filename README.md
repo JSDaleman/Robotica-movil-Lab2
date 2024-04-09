@@ -144,6 +144,13 @@ Para resunmir, el programa #1 controla la generación y publicación de comandos
 
 
 ## Plano donde el Turtlesim puede moverse
+Corriendo el pysubpose.py y con el turtle_teleop_key se encontraron los datos mostrados a continuación 
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/d386a914-7b25-47e9-9fd8-7e220912cbe8)
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/a5f749b7-8082-4ff5-bb86-64f4a6968c34)
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/c7cd4cc5-0ab2-46c9-8bb0-3b38c2ed4eec)
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/4f352c8a-a07c-4ddd-945e-edcd4f0fe362)
+el plano de movimiento de la tortuga según los datos recogidos es de dimenciones 11.088889122009277 x 11.088889122009277 en donde puede moverse desde la coordenada (0, 0) hasta la coordenada (11.088889122009277, 11.088889122009277)
+
 
 ## Como usar algún servicio en Python
 
