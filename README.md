@@ -506,7 +506,8 @@ chmod u+x Square.py
 
 ## Otros links de interes
 * [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
-* [ROS desde el Lego Ev3](https://github.com/moriarty/ros-ev3) 
+* [ROS desde el Lego Ev3](https://github.com/moriarty/ros-ev3)
+* [Manaje con python ev3dev](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/latest/)
 * [Manejo de motores del Ev3 con Python](https://www.youtube.com/watch?v=j0-ATIe6pqg) 
 * [Uso de sensor lidar con Ev3](https://www.youtube.com/watch?v=JX0zeYa-faM) 
 * [Programacion y conexion SSH desde Visual Studio Code con Ev3](https://www.youtube.com/watch?v=uNSIOvqzAnY) 
