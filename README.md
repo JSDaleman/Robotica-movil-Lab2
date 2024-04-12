@@ -182,78 +182,12 @@ roscore
 2. Crear los archivos:
 
    El primer archivo, CT.py es el archivo de Python encargado de dibujar el cuadrado y triángulo con cada una de las tortugas.
-   
-   ```
-   #!/usr/bin/env python
+   [ CT.py][(https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20A/CT.py)
+  
 
-   import rospy
-   from turtlesim.srv import TeleportAbsolute
-   from std_srvs.srv import Empty
-
-   if __name__ == '__main__':
-	    rospy.init_node('turtlesimservice', anonymous=False)
-
-     #Define la primera tortuga
-	    rospy.wait_for_service('turtle1/teleport_absolute')
-	    turtle1_teleport = rospy.ServiceProxy('turtle1/teleport_absolute',
-		   TeleportAbsolute)
-
-     #Define la segunda tortuga
-	    rospy.wait_for_service('turtle2/teleport_absolute')
-	    turtle2_teleport = rospy.ServiceProxy('turtle2/teleport_absolute',
-		   TeleportAbsolute)
-	
-	    rospy.wait_for_service('clear')
-	    clear1 = rospy.ServiceProxy('clear', Empty)
-
-
-	    rate = rospy.Rate(0.3)
-
-     #Posicion de las tortugas
-	    pos1=1
-	    pos2=1
-	    # Similar to while(ros::ok())
-     #Bucle
-	    while not rospy.is_shutdown():
-     #Cuadrado
-		      if (pos1==1):
-			       resp1 = turtle1_teleport(4, 5, 0)
-			       clear1()
-		      if (pos1==2):
-			       resp1 = turtle1_teleport(4, 10, 0)
-		      if (pos1==3):
-			       resp1 = turtle1_teleport(8, 10, 0)
-		      if (pos1==4):
-			       resp1 = turtle1_teleport(8, 5, 0)
-		      if (pos1==5):
-			       resp1 = turtle1_teleport(4, 5, 0)
-		      if (pos1>5):
-			       pos1=1
-		      pos1+=1
-
-      #Triangulo
-		      if (pos2==1):
-			       resp2 = turtle2_teleport(3, 5, 0)
-			       clear1()
-		      if (pos2==2):
-			       resp2 = turtle2_teleport(3, 11, 0)
-		      if (pos2==3):
-			       resp2 = turtle2_teleport(0, 7, 0)
-		      if (pos2==4):
-			       resp2 = turtle2_teleport(3, 5, 0)
-		      if (pos2>4):
-			       pos2=1
-		      pos2+=1
-	
-   rate.sleep()
-   ```
    Segundo archivo, es el launch para ejecutar todas las tareas.
-   ```
-   <launch>
-    <node pkg="turtlesim" type="turtlesim_node" name="turtle" />
-    <node pkg="pruebas" type="CT.py" name="CT_node" output="screen" />
-   </launch>
-   ```
+   [CT.launch](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20A/CT.launch)
+  
 3. Ejecución
    
    En la consola se ejecuntan los siguientes comandos:
@@ -273,6 +207,47 @@ roscore
 
 
 ## Conexión Lego EV3 con ROS
+
+### Preparación de entorno e intalacion de librerias y paquetes
+
+#### Creacion del workspace
+
+Para esto crearemos un directrotio que sera nuestro workspace y tendra nuestros archivos de intalación
+
+```
+cd ~
+mkdir catkin_ws
+cd catkin_ws
+mkdir src
+catkin build
+cd src
+catkin_create_pkg ev3dev_ros
+```
+
+#### Intalacion de libreria de python
+
+Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
+
+```
+cd ~/catkin_ws/src/ev3dev_ros/
+git clone https://github.com/ev3dev/ev3dev-lang-python.git
+cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-python
+sudo python3 setup.py install
+```
+
+#### Intalacion de libreria C++
+
+Para la instalacion de la libreria en C++ descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
+
+```
+cd ~/catkin_ws/src/ev3dev_ros/
+git clone https://github.com/ddemidov/ev3dev-lang-cpp.git
+cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-cpp
+mkdir build
+cd build
+cmake ..
+sudo make install
+```
 
 ### Creación de SD booteable con ev3dev
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
@@ -316,46 +291,6 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent
 
 ```
 
-### Preparación de entorno e intalacion de librerias y paquetes
-
-#### Creacion del workspace
-
-Para esto crearemos un directrotio que sera nuestro workspace y tendra nuestros archivos de intalación
-
-```
-cd ~
-mkdir catkin_ws
-cd catkin_ws
-mkdir src
-catkin build
-cd src
-catkin_create_pkg ev3dev_ros
-```
-
-#### Intalacion de libreria de python
-
-Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
-
-```
-cd ~/catkin_ws/src/ev3dev_ros/
-git clone https://github.com/ev3dev/ev3dev-lang-python.git
-cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-python
-sudo python3 setup.py install
-```
-
-#### Intalacion de libreria C++
-
-Para la instalacion de la libreria en C++ descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
-
-```
-cd ~/catkin_ws/src/ev3dev_ros/
-git clone https://github.com/ddemidov/ev3dev-lang-cpp.git
-cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-cpp
-mkdir build
-cd build
-cmake ..
-sudo make install
-```
 
 ### Creación de scrip en python de ejemplo y convertilo en ejecutable
 
