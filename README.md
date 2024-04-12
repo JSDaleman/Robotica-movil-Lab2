@@ -343,7 +343,7 @@ o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control rem
 * Encoder sensor de rueda.
 * Sensor de Ultrasonido del EV3.
 
-** Nota ** Si en la red wifi se detecta correctamente el robot puede usara ev3dev.local en vez de la dirección I
+** Nota ** Si en la red wifi se detecta correctamente el robot puede usara ev3dev.local en vez de la dirección IP
 
 #### Giro de la rueda
 Para hacer la medición con un medio externo se uso un transportador de 360° con una estructura en lego mostrada a continuación.
