@@ -9,12 +9,12 @@ Santiago Olaya
 
 Tabla de Contenidos
 ---
-- [¿Qué es ROS?](#¿Qué-es-ROS?)
-- [ Comandos para rosnode, rostopic, rosservice,rosmsg, rospack](#Comandos-para-rosnode,-rostopic,-rosservice,-rosmsg,-rospack)
-- [¿Qué hacen los programas de python?](#¿Qué-hacen-los-programas-de-python?)
-- [Plano donde el Turtlesim puede moverse](#Plano-donde-el-Turtlesim-puede-moverse)
-- [Como usar algún servicio en Python](#Como-usar-algúns-ervicio-en-Python).
-- [Servicio spawn](#Servicio-spawn).
+- [¿Qué es ROS?](#qué-es-ros)
+- [ Comandos para rosnode, rostopic, rosservice,rosmsg, rospack](#comandos-para-rosnode-rostopic-rosservice-rosmsg-rospack)
+- [¿Qué hacen los programas de python?](#qué-hacen-los-programas-de-python)
+- [Plano donde el Turtlesim puede moverse](#plano-donde-el-turtlesim-puede-moverse)
+- [Como usar algún servicio en Python](#como-usar-algún-servicio-en-python).
+- [Servicio spawn](#servicio-spawn).
 - [Otros links de interes](#Otros-links-de-interes).
 - [Referencias](#Referencias) 
 
