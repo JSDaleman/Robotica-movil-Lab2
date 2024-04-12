@@ -374,7 +374,7 @@ python3 GirtoRueda.py
 
 Las mediciónes se registrarón en el siguiente excel para procesar la información
 
-[Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A?e=6IDjaX)
+[Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A?e=L7xjWw)
 
 
 
