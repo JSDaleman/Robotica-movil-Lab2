@@ -292,94 +292,41 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent
 ```
 
 
-### Creación de scrip en python de ejemplo y convertilo en ejecutable
-
-Iremos a la caprta de src y en esta crearemos un directorio para scripts y dentro de este crearemos nuestro script para que el robot siga la trayectoria de un cuadrado usando el giro sensor. 
-
-```
-cd ~
-cd catkin_ws/src/ev3dev_ros/
-mkdir scripts
-code .
-```
-Con esto abriremos visual studio code y podremos crear el siguiente script titulado Square.py
-
-```
-#!/usr/bin/env python3
-
-import rospy
-from geometry_msgs.msg import Twist
-from sensor_msgs.msg import Imu
-import time
-
-# Definir las variables globales
-robot_twist = Twist()
-gyro_angle = 0
-
-# Función de callback para obtener el ángulo del giroscopio
-def gyro_callback(msg):
-    global gyro_angle
-    # Suponiendo que el mensaje Imu contiene el ángulo en el eje Z
-    gyro_angle = msg.angular_velocity.z
-
-# Función para avanzar
-def avanzar():
-    robot_twist.linear.x = 0.2
-    robot_twist.angular.z = 0.0
-
-# Función para girar a la derecha
-def girar_derecha():
-    robot_twist.linear.x = 0.0
-    robot_twist.angular.z = -0.5
-
-# Función principal
-def main():
-    rospy.init_node('robot_control_node')
-    rate = rospy.Rate(10)  # Frecuencia de publicación de 10 Hz
-    
-    # Suscribirse al tema del giroscopio
-    rospy.Subscriber('/imu', Imu, gyro_callback)
-
-    # Publicar en el tema de movimiento
-    twist_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
-
-    try:
-        for _ in range(4):  # Ejecutar 4 veces
-            # Avanzar durante 5 segundos
-            avanzar()
-            time.sleep(5)
-            
-            # Detener y girar 90 grados
-            robot_twist = Twist()
-            twist_pub.publish(robot_twist)
-            current_angle = gyro_angle
-            target_angle = current_angle + 90
-            while current_angle < target_angle:
-                girar_derecha()
-                twist_pub.publish(robot_twist)
-                rate.sleep()
-                current_angle = gyro_angle
-            robot_twist = Twist()
-            twist_pub.publish(robot_twist)
-
-    finally:
-        # Asegurarse de que el robot se detenga al finalizar
-        robot_twist = Twist()
-        twist_pub.publish(robot_twist)
-
-if __name__ == "__main__":
-    main()
-```
-Ahora convertiremos el script en un ejecutable, con los siguientes comando y daremos acceso al usuario y se volvera el archivo ejecutable
+#### Scripts de prueba con python
+En la terminal del robot vamos a crear los directorios de trabajo para nuestros scripts de python con los siguentes comandos
 
 ```
 cd ~
-cd catkin_ws/
-catkin_make
-source devel/setup.bash
-cd src/ev3dev_ros/scripts/
-chmod u+x Square.py
+mkdir pruebas
+cd pruebas/
+mkdir python
+cd python/
+mkdir Mov
+cd Mov
 ```
+
+ahora en crearemos el scritp inicial el cual lo que hara es que cambiara los leds de color y movera en los dos motores con velocidad del 75% por 5 rotaciones
+
+[pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/pythonHello.py)
+
+copiaremos el archivo en el directorio del robot 
+
+```
+scp pythonHello.py robot@<Dirección IP del robot>:/home/robot/pruebas/python/Mov/
+```
+
+Para correr el script en la terminar del robot le daremos los permisos necesarios al archivo y lo correremos
+```
+cd ~/pruebas/python/Mov/
+chmod +x pythonHello.py
+python3 pythonHello.py
+```
+Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado
+[Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py)
+
+o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4
+
+[PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
 
 
 ### Pruebas de funcionamiento
@@ -396,6 +343,8 @@ chmod u+x Square.py
 * Encoder sensor de rueda.
 * Sensor de Ultrasonido del EV3.
 
+** Nota ** Si en la red wifi se detecta correctamente el robot puede usara ev3dev.local en vez de la dirección I
+
 #### Giro de la rueda
 Para hacer la medición con un medio externo se uso un transportador de 360° con una estructura en lego mostrada a continuación.
 
@@ -406,10 +355,27 @@ Para hacer la medición con un medio externo se uso un transportador de 360° co
 
 Asimismo se creo el siguente script el cual solicita al usuario cuanto sera el valor de intervalo de cada movimiento de la ruda para dar la vuelta y el puerto del motor que se hara girar haciendo una pausa en cada intervalo para que el usuario pueda hacer la medicón externa y luego indique que se realice el siguente movimiento.
 
+[GiroRueda.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/GiroRueda.py)
+
+luego este script se copio al robot con el comando mostrado a continuación
+
+```
+scp GirtoRueda.py robot@<Dirección IP del robot>:/home/robot/pruebas/python/Incertidumbre/
+```
+
+luego en la terminal donde esta corriendo la conexión ssh se corrio el script
+
+```
+cd ~/pruebas/python/Incertidumbre/
+chmod +x GirtoRueda.py
+python3 GirtoRueda.py
+```
+
 
 Las mediciónes se registrarón en el siguiente excel para procesar la información
 
-[Excek de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcB8SXDgfkydeaSxbCZJroWAg?e=MLGKij)
+[Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcB8SXDgfkydeaSxbCZJroWAg?e=MLGKij)
+
 
 
 
