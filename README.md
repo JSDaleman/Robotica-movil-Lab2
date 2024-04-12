@@ -376,7 +376,7 @@ Las mediciónes se registrarón en el siguiente excel para procesar la informaci
 
 [Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A)
 
-En las mediciones podemos ver que el error relativo que se maneja es del 1%, el error esta entre 1 a 2 grados del valor del patron  en donde los movimientos cortos (30°) generan menos errores a los movimientos largos (45°). Esto se puede deber al error acumulado en el movimiento en donde al moverse un ángulo mayor se tiene errores más grandes aun asi el grado del error tiende a no superar el 3% 
+En las mediciones podemos ver que el error relativo que se maneja es del 1%, el error esta entre 1 a 2 grados del valor del patron  en donde los movimientos cortos (30°) generan menos errores a los movimientos largos (45°). Esto se puede deber al error acumulado en el movimiento en donde al moverse un ángulo mayor se tiene errores más grandes aun asi el grado del error tiende a no superar el 3%.
 
 
 ## Otros links de interes
