@@ -311,6 +311,8 @@ roscore
 
 
 ## Conexión Lego EV3 con ROS
+
+### Creación de SD booteable con ev3dev
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
 * [Seleccion de SD](https://github.com/ev3dev/ev3dev/wiki/Selecting-a-microSD-card)
 * [Antenas wifi compatibles leJos](https://lejosnews.wordpress.com/2015/02/03/comparing-wifi-adapters/).
@@ -351,29 +353,8 @@ python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5); tank_drive.off(brake=True)"
 
 ```
+
 ### Preparación de entorno e intalacion de librerias y paquetes
-
-#### Paquete de control de ev3 con ros
-
-Lo primero sera la intalación de paquetes que permitan el manejo del Ev3 con ROS en la terminal correremos los siguentes comandos para instalar el paquete 'ev3_ros'. en distro en nuestro caso ponemos la noetic
-```
-sudo apt-get update
-sudo apt-get install ros-<distro>-ev3-ros
-
-```
-
-##### Confirmar vesion de ros instalada
-
-Si es necesario verificar que distribución se tiene actualmentee se puede hacer con los siguentes comandos
-
-```
-rosversion -d
-```
- tambien puede verificar la versión con el comando
-
-```
-rosversion -v
-```
 
 #### Creacion del workspace
 
@@ -387,7 +368,6 @@ mkdir src
 catkin build
 cd src
 catkin_create_pkg ev3dev_ros
-cd ev3dev_ros
 ```
 
 #### Intalacion de libreria de python
@@ -395,10 +375,10 @@ cd ev3dev_ros
 Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
 
 ```
+cd ~/catkin_ws/src/ev3dev_ros/
 git clone https://github.com/ev3dev/ev3dev-lang-python.git
-cd ev3dev-lang-python
+cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-python
 sudo python3 setup.py install
-cd ..
 ```
 
 #### Intalacion de libreria C++
@@ -406,20 +386,14 @@ cd ..
 Para la instalacion de la libreria en C++ descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
 
 ```
+cd ~/catkin_ws/src/ev3dev_ros/
 git clone https://github.com/ddemidov/ev3dev-lang-cpp.git
-cd ev3dev-lang-cpp
+cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-cpp
 mkdir build
 cd build
 cmake ..
 sudo make install
 ```
-#### Configuración de comunicación de ROS y el ev3
-Ahora configuraremos las variables de entorno de tal forma que aseguremos la conexión entre ros y el ev3
-```
-export ROS_MASTER_URI=http://<dirección_IP_del_EV3>:11311
-export ROS_HOSTNAME=<dirección_IP_de_tu_PC>
-```
-**Nota:** Para poder conocer la dirección IP de su PC se puede con el comando ifconfig
 
 ### Creación de scrip en python de ejemplo y convertilo en ejecutable
 
@@ -513,17 +487,21 @@ chmod u+x Square.py
 
 ### Pruebas de funcionamiento
 
-En un nuvo terminal correremos el nodo principal de ROS con el comando 
-```
-roscore
-```
-En otro terminal tendremos la comunicacion SSH con el robot como se mostro en la sección anterior y en otra correremos el nodo para el script.
+## Incertidumbre en sensores
 
-```
-rosrun ev3dev_ros Square.py
-```
+### Lidar
 
-Con esto veremos como el robot hace una trayectoria que sigue un cuadrado.
+### Ultrasonido HC-SR04
+
+###  Sensores Lego
+
+#### Desplazamineto
+* Encoder sensor de rueda.
+* Sensor de Ultrasonido del EV3.
+
+#### Giro de la rueda
+
+
 
 ## Otros links de interes
 * [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
