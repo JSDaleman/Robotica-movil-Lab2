@@ -7,6 +7,10 @@ Luis Alejandro Duran Espitia
 
 Santiago Olaya
 
+# Contenido
+- [¿Qué es ROS?](## ¿Qué es ROS?)
+
+
 ## ¿Qué es ROS? 
 
 ROS es un meta sistema operativo de código abierto para tu robot. Provee de servicios que se esperarían de un sistema operativo, incluyendo abstracción de hardware, control de dispositivos de bajo nivel, implementación de funcionalidades comunes, pasaje de mensaje entre procesos y manejo de paquetes. También brinda herramientas y librerías para obtener, construir, escribir y correr código a través y mediante varias computadoras. ROS es similar a otras estructuras o armazones para robot como Player, YARP, Orocos, CARMEN, Orca, MOOS, y Microsoft Robotics Studio. [1]
