@@ -72,35 +72,9 @@ Al ser un sistema muy versartil al tener una contruccion modular permite una alt
 
 ### Programa #1: Publicador de velocidades para turtlesim (pypubvel.py)
 Este programa Python esta pensado para ir publicando comandos de velocidad angular y lineal aleatorios en un robot simulado del turtlesim. Utiliza ROS para interactuar con el sistema de control del robot.
-```
-#!/usr/bin/env python 1
-2
-import rospy 3
-from geometry_msgs.msg import Twist 4
-from random import random 5
-6
-if __name__ == ’__main__’: 7
-# Create a publisher on topic turtle1/cmd_vel, type geometry_msgs/Twist 8
-pub = rospy.Publisher(’turtle1/cmd_vel’, Twist, queue_size=1000) 9
-rospy.init_node(’pypubvel’, anonymous=False) 10
-11
-rate = rospy.Rate(2) 12
-13
-# Similar to while(ros::ok()) 14
-while not rospy.is_shutdown(): 15
-# Create and populate new Twist message 16
-msg = Twist() 17
-msg.linear.x = random() 18
-msg.angular.z = 2*random() - 1 19
-20
-# Similar to ROS_INFO_STREAM macro, log information. 21
-rospy.loginfo(’Sending random velocity command:’ + 22
-’ linear=’ + str(msg.linear.x) + ’ angular=’ + str(msg.angular.z)) 23
-24
-# Publish the message and wait on rate. 25
-pub.publish(msg) 26
-rate.sleep() 
-```
+
+[pypubvel.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20A/pypubvel.py)
+
 Funciones de ROS utilizadas:
 rospy.init_node(): Inicializa un nodo ROS.
 rospy.Publisher(): Crea un publicador en un determinado tema con un tipo de mensaje específico.
@@ -124,22 +98,9 @@ Espera para cumplir con la frecuencia deseada: Después de publicar el mensaje, 
 ### Programa #2: Subcripción a tema turtle1/pose (pysubpose.py)
 
 Con este programa de Python se genera la subspricion a los mensajes de posición del robot simulado con turtlesim, y al mismo tiempo buscamos registrar esta información.
-```
-#!/usr/bin/env python 1
-2
-import rospy
-from turtlesim.msg import Pose 4
-5
-def poseMessageReceived(message): 6
-rospy.loginfo(’position=(’ + str(message.x) + ’,’ + str(message.y) + 7
-’)’ + ’ direction=’ + str(message.theta)) 8
-9
-if __name__ == ’__main__’: 10
-rospy.init_node(’pysubpose’, anonymous=False) 11
-sub = rospy.Subscriber(’turtle1/pose’, Pose, poseMessageReceived) 12
-13
-rospy.spin()
-```
+
+[pysubpose.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20A/pysubpose.py)
+
 Funciones de ROS utilizadas:
 rospy.init_node(): Inicializa un nodo ROS.
 rospy.Subscriber(): Crea un suscriptor que escucha un determinado tema y llama a una función de devolución de llamada cuando se recibe un mensaje.
