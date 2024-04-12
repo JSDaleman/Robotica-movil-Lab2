@@ -9,9 +9,14 @@ Santiago Olaya
 
 Tabla de Contenidos
 ---
-- [¿Qué es ROS?](#¿Qué-es-ROS?)
-- 
-
+- [¿Qué es ROS?](#¿Qué_es_ROS?)
+- [ Comandos para rosnode, rostopic, rosservice,rosmsg, rospack](#Comandos_para_rosnode,_rostopic,_rosservice,_rosmsg,_rospack)
+- [¿Qué hacen los programas de python?](#¿Qué_hacen_los_programas_de_python?)
+- [Plano donde el Turtlesim puede moverse](#Plano_donde_el_Turtlesim_puede_moverse)
+- [Como usar algún servicio en Python](#Como_usar_algún_servicio_en_Python).
+- [Servicio spawn](#Servicio_spawn).
+- [Otros links de interes](#Otros_links_de_interes).
+- [Referencias](#Referencias) 
 
 ## ¿Qué es ROS? 
 
@@ -19,7 +24,7 @@ ROS es un meta sistema operativo de código abierto para tu robot. Provee de ser
 
 Al ser un sistema muy versartil al tener una contruccion modular permite una alta adaptabilidad a los diferentes proyectos que se desarrollen, por su ampllio uso ROS cuenta con una comunidad muy amplia dando un alto acceso a diferentes bibliotecas, paketes, documentacion y soporte para diferentes problemas. Por la alta disponibilidad de librerias y paquetes se puede hacer un facil reuso de codigo lo que permite hacer dasarrollos más rapidamente además de poseer diversas herramientas para visualizar y depurar el comportamiento de los robots en tiempo real, lo que facilita el desarrollo y la depuración de aplicaciones robóticas complejas. Poir ultimo su comtabilidad con diferentes sistemas operativos permite su manejo en sistemas linux, masOS y windows.
 
-## Comandos para rosnode, rostopic, rosservice,rosmsg, rospack
+## Comandos para rosnode, rostopic, rosservice, rosmsg, rospack
 
 ### rosnode
   * rosnode ping Permite probar la conectividad al nodo.
@@ -62,7 +67,7 @@ Al ser un sistema muy versartil al tener una contruccion modular permite una alt
   * rosdep Instala dependencias del sistema de un paquete.
   * rqt En un rqt existe una extencion llamada "Introspection/Package Graph", la cual visualiza las dependencias de paquetes como un grafico.
 
-## ¿Qué hacen los progrmas de python?
+## ¿Qué hacen los programas de python?
 
 ### Programa #1: Publicador de velocidades para turtlesim (pypubvel.py)
 Este programa Python esta pensado para ir publicando comandos de velocidad angular y lineal aleatorios en un robot simulado del turtlesim. Utiliza ROS para interactuar con el sistema de control del robot.
