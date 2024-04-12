@@ -397,6 +397,19 @@ chmod u+x Square.py
 * Sensor de Ultrasonido del EV3.
 
 #### Giro de la rueda
+Para hacer la medición con un medio externo se uso un transportador de 360° con una estructura en lego mostrada a continuación.
+
+![Imagen de WhatsApp 2024-04-12 a las 13 55 23_59aae77c](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/0eea2e30-2691-4768-bbc7-1d8075c36262)
+![Imagen de WhatsApp 2024-04-12 a las 13 55 22_03e7eb2c](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/c5a7549c-ccb0-4f42-8105-ea8fb35fb596)
+![Imagen de WhatsApp 2024-04-12 a las 13 55 22_a3575e64](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/d108d465-82e3-438b-bb3c-9135ff404477)
+![Imagen de WhatsApp 2024-04-12 a las 13 55 23_fa8bc017](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/c13b7282-47cf-4817-b429-d3ab1457ed04)
+
+Asimismo se creo el siguente script el cual solicita al usuario cuanto sera el valor de intervalo de cada movimiento de la ruda para dar la vuelta y el puerto del motor que se hara girar haciendo una pausa en cada intervalo para que el usuario pueda hacer la medicón externa y luego indique que se realice el siguente movimiento.
+
+
+Las mediciónes se registrarón en el siguiente excel para procesar la información
+
+[Excek de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcB8SXDgfkydeaSxbCZJroWAg?e=MLGKij)
 
 
 
