@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import ev3dev2.motor as motor
+from ev3dev2.motor import SpeedPercent
 import time
 import sys
 
@@ -10,11 +11,13 @@ print("Inicializando ...")
 # Definir los motores conectados a los puertos B y C
 motor_b = motor.LargeMotor('outB')
 motor_c = motor.LargeMotor('outC')
-motor_c.ENCODER_POLARITY_INVERSED = 'inversed'
+
 
 # Restablecer la posición inicial de los encoders a cero
 motor_b.position = 0
 motor_c.position = 0
+motor_b.speed_sp = 0
+motor_c.speed_sp = 0
 
 # Definir la velocidad máxima del motor (en grados por segundo)
 MAX_SPEED = motor_b.max_speed
@@ -28,8 +31,6 @@ def rotate_wheels(interval, motor_activ, direccion):
 
     # Establecer la velocidad de los motores
     speed = 5
-    motor_b.speed_sp = 0
-    motor_c.speed_sp = 0
     motor_activ.position = 0
     ultimo_angulo = motor_activ.position
 
@@ -41,13 +42,14 @@ def rotate_wheels(interval, motor_activ, direccion):
         time.sleep(0.1)
         
         # Leer la última posición registrada del encoder
-        ultimo_angulo = motor_activ.position
+        ultimo_angulo = motor_activ.position * direccion
         print("La posicion del encoder es:", ultimo_angulo)
         input("Precione enter para la siguente medida")
     
     # Llevar el encoder a la posición 0
-    motor_activ.position = 0
-
+    motor_activ.run_to_abs_pos(position_sp=0, speed_sp=50, stop_action="hold")
+    
+    # Restablece la polaridad del codificador a 'normal'
     print("El encoder ha sido llevado a la posicion 0.")
 
 def main():
