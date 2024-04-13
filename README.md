@@ -340,7 +340,7 @@ Para encontar la incertidumbre en el desplazamiento del robot con los encoder de
 ![Imagen de WhatsApp 2024-04-12 a las 22 03 10_ea68df87](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/dfffbc05-0613-4085-92e6-433e7413eeef)
 ![Imagen de WhatsApp 2024-04-12 a las 22 03 10_1a7d094a](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/6a870c9f-32e1-45fd-99d5-caaa2f58bd13)
 
-En este medimos con el flexometro el desplazamiento que tiene el punto de contacto de la rueda con el suelo, para la obtención de datos se hicieron dos scripts uno en donde el movimiento se detiene con el valor del encoder [Desplazamiento.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/Desplazamiento.py) y otro donde se detiene con el valor del sensor de ultra sonido[DesplazamientoSensorUltraSonido.py
+En este medimos con el flexometro el desplazamiento que tiene el punto de contacto de la rueda con el suelo, para la obtención de datos se hicieron dos scripts uno en donde el movimiento se detiene con el valor del encoder [Desplazamiento.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/Desplazamiento.py) y otro donde se detiene con el valor del sensor de ultra sonido [DesplazamientoSensorUltraSonido.py
 ](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/DesplazamientoSensorUltraSonido.py). Una vez creados los scripts estos se copiaron en el robot en un directorio creado para estos.
 
 En la terminal de la conexion ssh
