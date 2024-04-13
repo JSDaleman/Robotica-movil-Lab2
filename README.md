@@ -321,12 +321,7 @@ cd ~/pruebas/python/Mov/
 chmod +x pythonHello.py
 python3 pythonHello.py
 ```
-Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado
-[Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py)
-
-o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4
-
-[PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
+Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado [Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py) o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4 [PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
 
 
 ### Pruebas de funcionamiento
@@ -340,10 +335,43 @@ o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control rem
 ###  Sensores Lego
 
 #### Desplazamineto
-* Encoder sensor de rueda.
-* Sensor de Ultrasonido del EV3.
+Para encontar la incertidumbre en el desplazamiento del robot con los encoder de los motores y el sensor de ultrasonido se hizo el siguiente montaje experimental donde se usa un flexometro o cinta metrica como patrón.
 
+![Imagen de WhatsApp 2024-04-12 a las 22 03 10_ea68df87](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/dfffbc05-0613-4085-92e6-433e7413eeef)
+![Imagen de WhatsApp 2024-04-12 a las 22 03 10_1a7d094a](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/6a870c9f-32e1-45fd-99d5-caaa2f58bd13)
+
+En este medimos con el flexometro el desplazamiento que tiene el punto de contacto de la rueda con el suelo, para la obtención de datos se hicieron dos scripts uno en donde el movimiento se detiene con el valor del encoder [Desplazamiento.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/Desplazamiento.py) y otro donde se detiene con el valor del sensor de ultra sonido[DesplazamientoSensorUltraSonido.py
+](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Incertidumbre/DesplazamientoSensorUltraSonido.py). Una vez creados los scripts estos se copiaron en el robot en un directorio creado para estos.
+
+En la terminal de la conexion ssh
+```
+cd ~/pruebas/python/
+mkdir Incertidumbre
+cd Incertidumbre
+```
+
+En la terminar en el directorio donde tengamos los scripts
+```
+scp Desplazamiento.py robot@<Dirección IP del robot>:/home/robot/pruebas/python/Incertidumbre/
+scp DesplazamientoSensorUltraSonido.py robot@<Dirección IP del robot>:/home/robot/pruebas/python/Incertidumbre/
+
+```
 ** Nota ** Si en la red wifi se detecta correctamente el robot puede usara ev3dev.local en vez de la dirección IP
+
+En la terminal de la conexion ssh
+```
+cd ~/pruebas/python/Incertidumbre/
+chmod +x Desplazamiento.py
+chmod +x DesplazamientoSensorUltraSonido.py
+```
+
+para ejecutar cada uno se usan los comados 
+
+```
+python3 Desplazamiento.py
+python3 DesplazamientoSensorUltraSonido.py
+```
+Cada uno se ejecuto dos veces una con velocidad de 30% y otra con la de 100% obteniendo los datos presentados en este excel [Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A). Con los errores encontrados se puede ver que el sensor de ultrasonido teinde a ser más excato que el encoder esto debido a los calucolos internos que se hacen con el encoder puede afectar más la lectura de la medición asi mismo que cuando se maneja mayores velocidades el error de desplazamiento tiende a ser mayor que a baja velocidad.
 
 #### Giro de la rueda
 Para hacer la medición con un medio externo se uso un transportador de 360° con una estructura en lego mostrada a continuación.
@@ -372,11 +400,7 @@ python3 GirtoRueda.py
 ```
 
 
-Las mediciónes se registrarón en el siguiente excel para procesar la información
-
-[Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A)
-
-En las mediciones podemos ver que el error relativo que se maneja es del 1%, el error esta entre 1 a 2 grados del valor del patron  en donde los movimientos cortos (30°) generan menos errores a los movimientos largos (45°). Esto se puede deber al error acumulado en el movimiento en donde al moverse un ángulo mayor se tiene errores más grandes aun asi el grado del error tiende a no superar el 3%.
+Las mediciónes se registrarón en el siguiente excel para procesar la información [Excel de mediciones](https://unaledu-my.sharepoint.com/:x:/g/personal/jdaleman_unal_edu_co/Ed-b2T2l6-hNlDRAIFZ_NJcBvsgojICqpPVucmziBNNi9A). En las mediciones podemos ver que el error relativo que se maneja es del 1%, el error esta entre 1 a 2 grados del valor del patron  en donde los movimientos cortos (30°) generan menos errores a los movimientos largos (45°). Esto se puede deber al error acumulado en el movimiento en donde al moverse un ángulo mayor se tiene errores más grandes aun asi el grado del error tiende a no superar el 3%.
 
 
 ## Otros links de interes
