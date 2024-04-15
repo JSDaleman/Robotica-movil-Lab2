@@ -1,4 +1,4 @@
-from ev3dev2.motor import OUTPUT_A, OUTPUT_B, MoveTank, SpeedPercent
+from ev3dev2.motor import OUTPUT_B, OUTPUT_C, MoveTank, SpeedPercent
 from ev3dev2.sensor.lego import GyroSensor
 import time
 
@@ -15,7 +15,7 @@ def moverse_adelante(tank):
     tank.on_for_seconds(SPEED, SPEED, 3)  # Moverse hacia adelante durante 3 segundos
 
 # Inicializar objetos del motor y el giroscopio
-tank = MoveTank(OUTPUT_A, OUTPUT_B)
+tank = MoveTank(OUTPUT_B, OUTPUT_C)
 gyro = GyroSensor()
 
 # Calibrar el giroscopio
