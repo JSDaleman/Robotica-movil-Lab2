@@ -276,15 +276,24 @@ Si desea probar el funcionamiento de motores por el terminal puede conectar los 
 ```
 python3 -c "from ev3dev2.motor import LargeMotor, OUTPUT_B, OUTPUT_C; LargeMotor(OUTPUT_B).on_for_seconds(speed=50, seconds=2); LargeMotor(OUTPUT_C).on_for_seconds(speed=50, seconds=2)"
 ```
-* Prueba con frenadao
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/b7f8a11e-e28e-4f08-9510-fa5757fd02bb
+
+* Prueba con frenado
 ```
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=50, seconds=5, brake=True)"
 ```
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/15509099-2400-46f0-bc81-fba9dff13f34
 
 * Giro del robot
 ```
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5, brake=True)"
 ```
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/c1e44991-dd83-43f9-a529-38af0ccf690e
+
+
 * Frenado suave
 ```
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5); tank_drive.off(brake=True)"
@@ -321,7 +330,22 @@ cd ~/pruebas/python/Mov/
 chmod +x pythonHello.py
 python3 pythonHello.py
 ```
+
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4
+
+
 Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado [Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py) o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4 [PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
+
+* Cuadrado.py
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/65e47aed-d465-48ff-9275-c2baa8c1c1dd
+
+En esta prueba cabe resaltar varias cosas en esta prueba la primera es que como se ve en el video al momento de girar sucede una guiñada ya que el movimiento tiene un control PID interno el cual corrige el movimiento cuando se pasa de la rotación objetivo. Asimismo podemos ver que el movimiento de girar posee un grado de error que si se revisa la documentación de la libreria se puede encontara que es de 2 si no se declara los errores de giros se van acumulando a un grado tal que no se hace un cuadrado en algunas ocaciones sino una especie de rombo o en otros una figura abierta.
+
+* PS4Explor3r
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/ecd50b96-dbf4-451a-8c51-adbe49c7a3e3
 
 
 ### Pruebas de funcionamiento
