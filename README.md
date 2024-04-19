@@ -331,10 +331,7 @@ chmod +x pythonHello.py
 python3 pythonHello.py
 ```
 
-
-[![Resultado de pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4)](Resultado de pythonHello.py)
-
-
+[!Resultado de pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4)
 
 Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado [Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py) o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4 [PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
 
