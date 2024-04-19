@@ -332,7 +332,7 @@ python3 pythonHello.py
 ```
 
 
-[![Resultado de pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4)]
+[![Resultado de pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4)](Resultado de pythonHello.py)
 
 
 
