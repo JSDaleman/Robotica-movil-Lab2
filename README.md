@@ -216,10 +216,10 @@ Para esto crearemos un directrotio que sera nuestro workspace y tendra nuestros 
 
 ```
 cd ~
-mkdir catkin_ws
-cd catkin_ws
+mkdir ev3dev_ros
+cd ev3dev_ros
 mkdir src
-catkin build
+mkdir src
 cd src
 catkin_create_pkg ev3dev_ros
 ```
@@ -229,25 +229,14 @@ catkin_create_pkg ev3dev_ros
 Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
 
 ```
-cd ~/catkin_ws/src/ev3dev_ros/
+cd ~
+mkdir librerias
+cd ~/librerias/
 git clone https://github.com/ev3dev/ev3dev-lang-python.git
-cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-python
+cd ~/librerias/ev3dev-lang-python
 sudo python3 setup.py install
 ```
 
-#### Intalacion de libreria C++
-
-Para la instalacion de la libreria en C++ descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
-
-```
-cd ~/catkin_ws/src/ev3dev_ros/
-git clone https://github.com/ddemidov/ev3dev-lang-cpp.git
-cd ~/catkin_ws/src/ev3dev_ros/ev3dev-lang-cpp
-mkdir build
-cd build
-cmake ..
-sudo make install
-```
 
 ### Creación de SD booteable con ev3dev
 Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD de minimo 2 GB de alamacenamiento y una antena USB wifi para el robot EV3. Para elegir una SD compatible y un adaptador wifi se recomienda leer las siguientes paginas:
@@ -277,21 +266,22 @@ Si desea probar el funcionamiento de motores por el terminal puede conectar los 
 python3 -c "from ev3dev2.motor import LargeMotor, OUTPUT_B, OUTPUT_C; LargeMotor(OUTPUT_B).on_for_seconds(speed=50, seconds=2); LargeMotor(OUTPUT_C).on_for_seconds(speed=50, seconds=2)"
 ```
 
-[!Prueba de mover cada motor independientemente](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/b7f8a11e-e28e-4f08-9510-fa5757fd02bb)
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/4514641b-869f-43b0-8adf-74ec17cf0142
 
 * Prueba con frenado
 ```
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=50, seconds=5, brake=True)"
 ```
 
-[!Prueba de movimineto con frenado](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/15509099-2400-46f0-bc81-fba9dff13f34)
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/5100ec6d-13a1-4fb5-8574-61f7fa2af7d3
 
 * Giro del robot
 ```
 python3 -c "from ev3dev2.motor import MoveTank, OUTPUT_B, OUTPUT_C, SpeedPercent, MoveTank; tank_drive = MoveTank(OUTPUT_B, OUTPUT_C); tank_drive.on_for_seconds(left_speed=50, right_speed=45, seconds=5, brake=True)"
 ```
 
-[!Prueba de giro dando valores diferentes de velocidad a cada motor](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/c1e44991-dd83-43f9-a529-38af0ccf690e)
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/6e06f705-b825-4c8d-ac69-6b6de09b7f5b
 
 
 * Frenado suave
@@ -331,22 +321,28 @@ chmod +x pythonHello.py
 python3 pythonHello.py
 ```
 
-[!Resultado de pythonHello.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9c2c51ca-befa-409a-a1af-7de2c8b8c6b4)
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/9ceeae43-7512-4ca5-8dd9-0cdb3c182c99
+
 
 Otro script que se puede usar para hacer pruebas es el siguiente para una trayectoria de un cuadrado [Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Mov/Cuadrado.py) o se puede tambien probar el del poryecto de ev3dev PS4Explor3r para control remoto con un control de PS4 [PS4Explor3r](https://www.ev3dev.org/projects/2018/09/02/PS4Explor3r/)
 
 * Cuadrado.py
 
-[!Resultado de Cuadrado.py](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/65e47aed-d465-48ff-9275-c2baa8c1c1dd)
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/584d0fcd-5021-4c59-8e6e-98d7026d1675
+
 
 En esta prueba cabe resaltar varias cosas en esta prueba la primera es que como se ve en el video al momento de girar sucede una guiñada ya que el movimiento tiene un control PID interno el cual corrige el movimiento cuando se pasa de la rotación objetivo. Asimismo podemos ver que el movimiento de girar posee un grado de error que si se revisa la documentación de la libreria se puede encontara que es de 2 si no se declara los errores de giros se van acumulando a un grado tal que no se hace un cuadrado en algunas ocaciones sino una especie de rombo o en otros una figura abierta.
 
 * PS4Explor3r
 
-[!Resultado de PS4Explor3r](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/ecd50b96-dbf4-451a-8c51-adbe49c7a3e3)
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/f3be589d-fb43-42f0-85e0-a6480df9a6db
 
 
-### Pruebas de funcionamiento
+### Comunicación mqtt
+
+
 
 ## Incertidumbre en sensores
 
