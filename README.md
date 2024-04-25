@@ -342,7 +342,7 @@ https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/f3be589d-fb43-4
 
 ### Comunicación mqtt
 
-
+Para poder integrar el robot lego ev3 con ros se buscaron varias formas para comunicarse con ros entre las cualses se encontro la comunicación mqtt la cual sigue una estructura similar a ros donde los elementos que se comunican se conectan a un broker mqtt el cual maneja los mensajes recibios, se manejas topicos en los cuales se pueden publicar mensajes y se puden suscribir las para hacer la recepción de mensajes en donde se tiene tiene una escucha permanente para recibir los mensajes 
 
 ## Incertidumbre en sensores
 
