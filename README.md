@@ -219,7 +219,6 @@ cd ~
 mkdir ev3dev_ros
 cd ev3dev_ros
 mkdir src
-mkdir src
 cd src
 catkin_create_pkg ev3dev_ros
 ```
@@ -349,6 +348,97 @@ En esta comunicación los equipos que se conectan son conocidos como clientes de
 ![Comunicaciónes](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/ac8bc943-ea79-49ea-a248-852512709800)
 
 ### Implementación de la comunicación
+
+#### Creación de broker y modificación de archivos
+Lo primero sera crear el broker MQTT para esto usaremos [hivemq](https://www.hivemq.com/) que nos permite crear un broker gratuito con un trafico maximo de 10 GB que al ser nuestros mensajes tan puqeños y bajo trafico sera más que suficiente y se pueden conectar hasta 100 sesiones al tiempo. Una vez creado iremos a la siguiente pestaña de resumen.
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/62362c28-b876-47cb-a5df-69f8fc6677b4)
+
+De esta sacaremos los datos de Cluster URL y Port los cuales replazaremos de los archivos de  [modulo MQTT EV3](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20B%20Ev3/Robot/mqtt_remote_method_calls.py) y [GIU_Control](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Parte%20B%20Ev3/ev3dev_ros/scripts/GIU_Control.py) para poder conectarnos a nuestro propio broker. Luego iremos a la pestaña Access Management para crear el usurio con contraseña para la seguridad en este caso el usurio y contraseña seran ```LegoEV301``` el cual es el nombre del robot. El nombre dado al robot consiste de dos parte "LegoEV3" + Lego_ID que es un número de identificación que se da en los archivos anteriormente modificados para tener una identificación del robot por si deseamos conectar más robots en la red y manejarlos.
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/eb66381b-6ed9-45df-b269-845c788bce5c)
+
+Leugo iremos a la pestaña web client en donde ingrsaremos las anteriores credenciales y conectaremos el cliente. Despues nos suscribiremos a todos los topicos para ver todo el trafico esta pestaña es util para verificar el trafico que se esta teniendo y hacer pruebas de mensajes.
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/a390c292-2093-438e-a0b7-0527c92722cd)
+
+
+#### Carga de archivos al robot
+En la terminal de la conexión con el robot crearemos un directorio para los archivos de la conexión y que ejecutaremos mas adelante para controlarlo
+
+```
+cd ~/pruebas/python/
+mkdir MQTT
+cd ~/pruebas/python/MQTT
+```
+
+luego copiaremos como se ha mostrado anteriormente todos los archivos del robot
+
+#### Compilación del paquete
+los archivos en la carpeta de [scripts](https://github.com/JSDaleman/Robotica-movil-Lab2/tree/Cambios-lab2/Scripts/Parte%20B%20Ev3/ev3dev_ros/scripts) los copiaremos en el paquete creado de ev3dev_ros de tal forma que quede la siguiente organización de los archivos.
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/04f98a99-03f9-4e8b-bfbe-f51418f00c04)
+
+Ahora modiifcaremos el archivo CMakeLists.txt agregando al final de este el siguiente codigo y guardamos los coambios
+
+```
+catkin_install_python(PROGRAMS
+    scripts/GIU_Control.py
+    scripts/mqtt_remote_method_calls.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    )
+```
+
+ya con todos los archivos necesarios y la modificacion compilaremos el paquete
+
+```
+cd ~/ev3dev_ros/
+catkin_make
+source devel/setup.bash
+```
+
+#### Ejecucion 
+Para la ejecución abriremos kitty y lanzaremos cuatro terminales (prar abrir las cuadro abriremos el program y opriremos tres veces ctrl + shift + enter).
+
+* Primera terminal
+  En esta haremos la conexión shh con el robot para iniciar la ejecución del cliente MQTT para el control de este recordar que la contraseña es "maker"
+  ```
+  ssh robot@ev3dev.local
+  maker
+  cd ~/pruebas/python/MQTT
+  python3 ev3_MQTT.py
+  ```
+
+* Segunda terminal
+  En esta iniciaremos el nodo Master de ROS
+  ```
+  roscore
+  ```
+
+* Tercera terminal
+  En esta inicaremos el nodo de turtlesim
+  ```
+  rosrun turtlesim turtlesim_node
+  ```
+
+* Cuarta terminal
+  En esta inicaremos nuestro nodo de ros con la GUI
+  ```
+  rosrun ev3dev_ros GIU_Control.py
+  ```
+
+Obteniendo lo mostrado a continuación
+![Terminales](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/948cb35b-e152-4094-8a82-10b70f5d180b)
+
+Ya con esto se desplegara la interfaz donde el usuario puede hacer que el robot gire de un lado o a otro además poder ir a adelante o atras, subir o bajar el brazo o solicitar la orientación actual del robot y verla reflejada en la orientación de la tortuga.
+
+![GIU](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/2dfd4890-bb76-4eb1-9ba9-2559c0825ade)
+
+
+
+#### Conclusiones de la implementación
+
+
 
 
 
