@@ -28,8 +28,8 @@ Tabla de Contenidos
     - [Creación de broker y modificación de archivos](#creación-de-broker-y-modificación-de-archivos)
     - [Carga de archivos al robot](#carga-de-archivos-al-robot)
     - [Compilación del paquete](#compilación-del-paquete)
-    - [Ejecución](#ejecucion)
-    - [Conclusiones de la implementación](e#conclusiones-de-la-implementación)
+  - [Ejecución](#ejecucion)
+  - [Conclusiones de la implementación](e#conclusiones-de-la-implementación)
 - [Incertidumbre en sensores](#incertidumbre-en-sensores).
   - [Sensores Lego](#sensores-lego)
     - [Desplazamineto](#desplazamineto)
@@ -415,7 +415,7 @@ catkin_make
 source devel/setup.bash
 ```
 
-#### Ejecucion 
+### Ejecucion 
 Para la ejecución abriremos kitty y lanzaremos cuatro terminales (prar abrir las cuadro abriremos el program y opriremos tres veces ctrl + shift + enter).
 
 * Primera terminal
@@ -454,7 +454,7 @@ Ya con esto se desplegara la interfaz donde el usuario puede hacer que el robot 
 
 
 
-#### Conclusiones de la implementación
+### Conclusiones de la implementación
 
 
 
