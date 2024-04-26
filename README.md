@@ -10,14 +10,25 @@ Santiago Olaya
 Tabla de Contenidos
 ---
 - [¿Qué es ROS?](#qué-es-ros)
-- [ Comandos para rosnode, rostopic, rosservice,rosmsg, rospack](#comandos-para-rosnode-rostopic-rosservice-rosmsg-rospack)
-- [¿Qué hacen los programas de python?](#qué-hacen-los-programas-de-python)
-- [Plano donde el Turtlesim puede moverse](#plano-donde-el-turtlesim-puede-moverse)
+- [ Comandos para rosnode, rostopic, rosservice,rosmsg, rospack](#comandos-para-rosnode-rostopic-rosservice-rosmsg-rospack).
+- [¿Qué hacen los programas de python?](#qué-hacen-los-programas-de-python).
+- [Plano donde el Turtlesim puede moverse](#plano-donde-el-turtlesim-puede-moverse).
 - [Como usar algún servicio en Python](#como-usar-algún-servicio-en-python).
 - [Servicio spawn](#servicio-spawn).
-- [Incertidumbre en sensores](#incertidumbre-en-sensores)
+- [Conexión Lego EV3 con ROS](#conexi%C3%B3n-lego-ev3-con-ros).
+  -[Preparación de entorno e intalacion de librerias y paquetes](#preparación-de-entorno-e-intalacion-de-librerias-y-paquetes).
+    -[Creacion del workspace](#creacion-del-workspace).
+    -[Instalacion de libreria de python](#instalacion-de-libreria-de-python)
+  -[Creación de SD booteable con ev3dev](#creación-de-sd-booteable-con-ev3dev)
+  -[Conexión al PC via wifi](#conexión-al-pc-via-wifi)
+    -[Pruebas de motores](#pruebas-de-motores)
+    -[Scripts de prueba con python](#scripts-de-prueba-con-python)
+  -[Comunicación mqtt](#comunicación-mqtt)
+  -[Implementación de la comunicación](#implementación-de-la-comunicación)
+  
+- [Incertidumbre en sensores](#incertidumbre-en-sensores).
 - [Otros links de interes](#Otros-links-de-interes).
-- [Referencias](#Referencias) 
+- [Referencias](#Referencias).
 
 ## ¿Qué es ROS? 
 
@@ -223,7 +234,7 @@ cd src
 catkin_create_pkg ev3dev_ros
 ```
 
-#### Intalacion de libreria de python
+#### Instalacion de libreria de python
 
 Para la instalacion de la libreria en python descargaremos los archivos necesarios y haremos la instalcion con los siguientes comandos
 
