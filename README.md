@@ -25,8 +25,15 @@ Tabla de Contenidos
     - [Scripts de prueba con python](#scripts-de-prueba-con-python)
   - [Comunicación mqtt](#comunicación-mqtt)
   - [Implementación de la comunicación](#implementación-de-la-comunicación)
-  
+    - [Creación de broker y modificación de archivos](#creación-de-broker-y-modificación-de-archivos)
+    - [Carga de archivos al robot](#carga-de-archivos-al-robot)
+    - [Compilación del paquete](#compilación-del-paquete)
+    - [Ejecución](#ejecucion)
+    - [Conclusiones de la implementación](e#conclusiones-de-la-implementación)
 - [Incertidumbre en sensores](#incertidumbre-en-sensores).
+  - [Sensores Lego](#sensores-lego)
+    - [Desplazamineto](#desplazamineto)
+    - [Giro de la rueda](#giro-de-la-rueda)
 - [Otros links de interes](#Otros-links-de-interes).
 - [Referencias](#Referencias).
 
