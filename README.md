@@ -16,15 +16,15 @@ Tabla de Contenidos
 - [Como usar algún servicio en Python](#como-usar-algún-servicio-en-python).
 - [Servicio spawn](#servicio-spawn).
 - [Conexión Lego EV3 con ROS](#conexi%C3%B3n-lego-ev3-con-ros).
-  -[Preparación de entorno e intalacion de librerias y paquetes](#preparación-de-entorno-e-intalacion-de-librerias-y-paquetes).
-    -[Creacion del workspace](#creacion-del-workspace).
-    -[Instalacion de libreria de python](#instalacion-de-libreria-de-python)
-  -[Creación de SD booteable con ev3dev](#creación-de-sd-booteable-con-ev3dev)
-  -[Conexión al PC via wifi](#conexión-al-pc-via-wifi)
-    -[Pruebas de motores](#pruebas-de-motores)
-    -[Scripts de prueba con python](#scripts-de-prueba-con-python)
-  -[Comunicación mqtt](#comunicación-mqtt)
-  -[Implementación de la comunicación](#implementación-de-la-comunicación)
+  - [Preparación de entorno e intalacion de librerias y paquetes](#preparación-de-entorno-e-intalacion-de-librerias-y-paquetes).
+    - [Creacion del workspace](#creacion-del-workspace).
+    - [Instalacion de libreria de python](#instalacion-de-libreria-de-python)
+  - [Creación de SD booteable con ev3dev](#creación-de-sd-booteable-con-ev3dev)
+  - [Conexión al PC via wifi](#conexión-al-pc-via-wifi)
+    - [Pruebas de motores](#pruebas-de-motores)
+    - [Scripts de prueba con python](#scripts-de-prueba-con-python)
+  - [Comunicación mqtt](#comunicación-mqtt)
+  - [Implementación de la comunicación](#implementación-de-la-comunicación)
   
 - [Incertidumbre en sensores](#incertidumbre-en-sensores).
 - [Otros links de interes](#Otros-links-de-interes).
