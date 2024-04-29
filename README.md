@@ -518,6 +518,15 @@ Las magnitudes que se usan para medir la dispersión de datos en estadística so
 
 ### Lidar
 
+Usando el RPLIDAR A1M8
+
+
+
+Datos capturados con el programa scanRPLIDAR.py
+
+![MeRLIDAR](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/b0e68ac0-0cae-499a-8b3f-c8e508e349dc)
+
+
 ### Ultrasonido HC-SR04
 
 ###  Sensores Lego
