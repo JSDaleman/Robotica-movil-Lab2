@@ -520,6 +520,9 @@ Las magnitudes que se usan para medir la dispersión de datos en estadística so
 
 Usando el RPLIDAR A1M8
 
+Espacio de trabajo
+
+![IMG_20240429_104106578](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/7f0e01d5-4ff2-4bba-a5bd-b4b930aa7ec6)
 
 
 Datos capturados con el programa scanRPLIDAR.py
