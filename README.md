@@ -477,26 +477,39 @@ https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/46a48ef9-ab9e-4
 
 
 ## Incertidumbre en sensores
-#### Respuestas a algunas preguntas:
-* ¿ Qué es el Vocabulario Internacional de Metrología (VIM)?
+
+###  Consulta bibliográfica
+
+#### ¿ Qué es el Vocabulario Internacional de Metrología (VIM)?
+
 El Vocabulario Internacional de Metrología (VIM) es un estándar internacional que se desarrolló con el objetivo de establecer un conjunto común de términos y definiciones en el campo de la metrología, la ciencia de la medición y sus aplicaciones. Este estándar fue desarrollado por la Organización Internacional de Metrología Legal (OIML) y el Comité Internacional de Pesas y Medidas (CIPM). El VIM es esencialmente un “diccionario terminológico” que contiene las denominaciones y definiciones que conciernen a uno o varios campos específicos de la metrología. Este documento es de gran importancia para los laboratorios y los profesionales de la medición, ya que proporciona una base común para la comprensión y la comunicación de los conceptos de medición.
+
 La versión más reciente del VIM es la 3ª edición, que se publicó en 2012. Esta edición incluye pequeñas correcciones y actualizaciones a las definiciones y términos anteriores. Además, está disponible en varios idiomas, incluyendo el español, lo que facilita su uso y comprensión por parte de los profesionales de la metrología de todo el mundo. El VIM es una herramienta valiosa para los profesionales de la metrología y los laboratorios de medición. Al proporcionar un conjunto común de términos y definiciones, el VIM ayuda a garantizar que todos los involucrados en el proceso de medición tengan una comprensión clara y consistente de los conceptos clave. Esto es esencial para garantizar la precisión y la coherencia de las mediciones.
-* Exactitud de medida: Se define como la proximidad entre un valor medido y un valor verdadero de un mensurando. Es decir, se refiere al grado de cercanía que tiene los resultados medidos con el valor de referencia, también llamado valor verdadero o magnitud real.
-* Precisión de medida: Se define como la proximidad existente entre las indicaciones o los valores medidos obtenidos en mediciones repetidas de un mismo objeto, o de objetos similares, bajo condiciones específicas.
-* Error de medida: Se define como la diferencia entre un valor medido de una magnitud y un valor de referencia (valor convencional o valor verdadero).
-* Incertidumbre de medida: Se define como un parámetro, asociado al resultado de una medición, que caracteriza la dispersión de los valores que razonablemente podrían ser atribuidos al mensurando. Es una medida de la variabilidad en los resultados de medición.
-* Error sistemático: Este tipo de error es constante en todas las mediciones y se debe a problemas con el equipo o el diseño del experimento. Por ejemplo, si tu cinta de medición se ha estirado, todas tus mediciones serán más bajas que el valor real. Este tipo de error afecta la validez del estudio y se asocia con debilidades en el diseño metodológico o de la fase de ejecución del estudio.
-* Error aleatorio: Este tipo de error varía de manera impredecible de una medición a otra. Se debe a la variabilidad inherente en el proceso de medición o en la cantidad que se está midiendo. Por ejemplo, si estás midiendo la velocidad del viento, esta puede aumentar y disminuir en diferentes momentos, por lo que si tomas una medida en un minuto, probablemente no será exactamente igual un minuto después. Los errores aleatorios afectan principalmente a la precisión de la medición.
-* En estadística, el valor medio o esperado es un número que representa el valor promedio de una variable aleatoria. Es igual al sumatorio de todos los productos formados por los valores de los sucesos aleatorios y sus respectivas probabilidades de suceder.
+
+#### Vocabulario según el VIM
+
+* **Exactitud de medida:** Se define como la proximidad entre un valor medido y un valor verdadero de un mensurando. Es decir, se refiere al grado de cercanía que tiene los resultados medidos con el valor de referencia, también llamado valor verdadero o magnitud real.
+* **Precisión de medida:** Se define como la proximidad existente entre las indicaciones o los valores medidos obtenidos en mediciones repetidas de un mismo objeto, o de objetos similares, bajo condiciones específicas.
+* **Error de medida:** Se define como la diferencia entre un valor medido de una magnitud y un valor de referencia (valor convencional o valor verdadero).
+* **Incertidumbre de medida:** Se define como un parámetro, asociado al resultado de una medición, que caracteriza la dispersión de los valores que razonablemente podrían ser atribuidos al mensurando. Es una medida de la variabilidad en los resultados de medición.
+
+#### Tipos de errores
+
+* **Error sistemático:** Este tipo de error es constante en todas las mediciones y se debe a problemas con el equipo o el diseño del experimento. Por ejemplo, si tu cinta de medición se ha estirado, todas tus mediciones serán más bajas que el valor real. Este tipo de error afecta la validez del estudio y se asocia con debilidades en el diseño metodológico o de la fase de ejecución del estudio.
+* **Error aleatorio:** Este tipo de error varía de manera impredecible de una medición a otra. Se debe a la variabilidad inherente en el proceso de medición o en la cantidad que se está midiendo. Por ejemplo, si estás midiendo la velocidad del viento, esta puede aumentar y disminuir en diferentes momentos, por lo que si tomas una medida en un minuto, probablemente no será exactamente igual un minuto después. Los errores aleatorios afectan principalmente a la precisión de la medición.
+
+#### Teoria estadistica
+
+En estadística, el valor medio o esperado es un número que representa el valor promedio de una variable aleatoria. Es igual al sumatorio de todos los productos formados por los valores de los sucesos aleatorios y sus respectivas probabilidades de suceder.
 
 Las magnitudes que se usan para medir la dispersión de datos en estadística son las siguientes:
 
-Rango: Es la diferencia entre el menor y el mayor valor de la distribución.
-Desviación media: Es el promedio de las diferentes desviaciones de cada dato respecto a la media.
-Varianza: Es igual a la suma de los cuadrados de los residuos partido por el número total de observaciones.
-Desviación estándar: Es igual a la raíz cuadrada de la suma de los cuadrados de las desviaciones de la serie de datos partido por el número total de observaciones.
-Coeficiente de variación: Es una medida de dispersión que sirve para determinar la dispersión de un conjunto de datos respecto a su media.
-Rango intercuartil: Indica la diferencia entre el tercer y el primer cuartil.
+- **Rango:** Es la diferencia entre el menor y el mayor valor de la distribución. 
+- **Desviación media:** Es el promedio de las diferentes desviaciones de cada dato respecto a la media.
+- **Varianza:** Es igual a la suma de los cuadrados de los residuos partido por el número total de observaciones.
+- **Desviación estándar:** Es igual a la raíz cuadrada de la suma de los cuadrados de las desviaciones de la serie de datos partido por el número total de observaciones.
+- **Coeficiente de variación:** Es una medida de dispersión que sirve para determinar la dispersión de un conjunto de datos respecto a su media.
+- **Rango intercuartil:** Indica la diferencia entre el tercer y el primer cuartil.
 
 ### Lidar
 
