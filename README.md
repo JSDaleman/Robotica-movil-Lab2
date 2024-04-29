@@ -18,22 +18,27 @@ Tabla de Contenidos
 - [Conexión Lego EV3 con ROS](#conexi%C3%B3n-lego-ev3-con-ros).
   - [Preparación de entorno e intalacion de librerias y paquetes](#preparación-de-entorno-e-intalacion-de-librerias-y-paquetes).
     - [Creacion del workspace](#creacion-del-workspace).
-    - [Instalacion de libreria de python](#instalacion-de-libreria-de-python)
-  - [Creación de SD booteable con ev3dev](#creación-de-sd-booteable-con-ev3dev)
-  - [Conexión al PC via wifi](#conexión-al-pc-via-wifi)
-    - [Pruebas de motores](#pruebas-de-motores)
-    - [Scripts de prueba con python](#scripts-de-prueba-con-python)
-  - [Comunicación mqtt](#comunicación-mqtt)
-  - [Implementación de la comunicación](#implementación-de-la-comunicación)
-    - [Creación de broker y modificación de archivos](#creación-de-broker-y-modificación-de-archivos)
-    - [Carga de archivos al robot](#carga-de-archivos-al-robot)
-    - [Compilación del paquete](#compilación-del-paquete)
-  - [Ejecución](#ejecucion)
-  - [Conclusiones de la implementación](e#conclusiones-de-la-implementación)
+    - [Instalacion de libreria de python](#instalacion-de-libreria-de-python).
+  - [Creación de SD booteable con ev3dev](#creación-de-sd-booteable-con-ev3dev).
+  - [Conexión al PC via wifi](#conexión-al-pc-via-wifi).
+    - [Pruebas de motores](#pruebas-de-motores).
+    - [Scripts de prueba con python](#scripts-de-prueba-con-python).
+  - [Comunicación mqtt](#comunicación-mqtt).
+  - [Implementación de la comunicación](#implementación-de-la-comunicación).
+    - [Creación de broker y modificación de archivos](#creación-de-broker-y-modificación-de-archivos).
+    - [Carga de archivos al robot](#carga-de-archivos-al-robot).
+    - [Compilación del paquete](#compilación-del-paquete).
+  - [Ejecución](#ejecucion).
+  - [Conclusiones de la implementación](e#conclusiones-de-la-implementación).
 - [Incertidumbre en sensores](#incertidumbre-en-sensores).
-  - [Sensores Lego](#sensores-lego)
-    - [Desplazamineto](#desplazamineto)
-    - [Giro de la rueda](#giro-de-la-rueda)
+  - [Consulta bibliografica](#consulta-bibliográfica).
+    - [¿ Qué es el Vocabulario Internacional de Metrología (VIM)?](#-qué-es-el-vocabulario-internacional-de-metrología-vim)
+    - [Vocabulario según el VIM](#vocabulario-según-el-vim)
+    - [Tipos de errores](#tipos-de-errores)
+    - [Teoria estadistica](#tipos-de-errores)
+  - [Sensores Lego](#sensores-lego).
+    - [Desplazamineto](#desplazamineto).
+    - [Giro de la rueda](#giro-de-la-rueda).
 - [Otros links de interes](#Otros-links-de-interes).
 - [Referencias](#Referencias).
 
