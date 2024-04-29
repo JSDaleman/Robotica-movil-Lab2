@@ -452,11 +452,27 @@ Ya con esto se desplegara la interfaz donde el usuario puede hacer que el robot 
 
 ![GIU](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/2dfd4890-bb76-4eb1-9ba9-2559c0825ade)
 
+* Prueba de control del brazo del robot
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/93a1506f-b2b7-4799-aad5-fe47d4745182
+
+* Prueba de controlar orientación del robot
+
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/92c940af-cf99-44eb-8f9e-c92b9c9d245d
+
+
+* Prueba de controlar desplazamiento
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/46a48ef9-ab9e-4792-9af0-0337abf88a13
 
 
 ### Conclusiones de la implementación
 
-
+* El usar mensajes por MQTT permite generar un control en el robot facilmente escalable para el manejo de diferentes sensores y de diferentes formas de los motores.
+* La integración con ROS por medio de la comunicación MQTT permite que el robot no sature su procesador interno pemitiendo tener una respuesta rapida a muchos de sus elementos.
+* Dado que la comunicación MQTT no depende de ROS se podria llegar a implementar un nodo parecido de funcionamiento con ROS2.
+* Con el manejo del robot EV3 con esta integracion con ROS se abre la posiblidad de integrarle otros sensores o procesamiento de información para realizar acciones muy grande usando el procesamiento de una computadora como nodo Master de ROS.
 
 
 
