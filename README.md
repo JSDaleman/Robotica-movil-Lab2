@@ -604,11 +604,16 @@ Las magnitudes que se usan para medir la dispersión de datos en estadística so
 
 Usando el RPLIDAR A1M8
 
+![IMG_20240429_104106578](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/1c0eb40f-80e7-4f98-90ba-1ec0b1537172)
 
 
 Datos capturados con el programa scanRPLIDAR.py
 
 ![MeRLIDAR](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/b0e68ac0-0cae-499a-8b3f-c8e508e349dc)
+
+![POSE2](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/5b992f91-5f3e-421b-9ef6-f7074854dc81)
+
+![POSE3](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/c1250e55-e53b-49c3-a250-56c1babea7e0)
 
 
 ### Ultrasonido HC-SR04
