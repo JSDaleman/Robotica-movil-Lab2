@@ -722,22 +722,27 @@ Ahora ubicamos un obtaculo a 1.5m.
 y posteriormete se corre el script, lo cual nos dio los siguientes datos.
 ![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/d8c235aa-13f5-4b4e-be69-1e1793aa7e6f)
 Luego con estos datos realizamos un histograma.
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/e5a484c6-da62-4cf5-ae2a-c0cdb8eda4bf)
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/e5a484c6-da62-4cf5-ae2a-c0cdb8eda4bf).
 
 Y finalmente ubicamos un obtaculo a 2m.
-![Imagen de WhatsApp 2024-04-29 a las 11 33 22_0a52fda4](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/4c2b1433-ee8a-4d8e-8d4c-c51159ab3d45)
+![Imagen de WhatsApp 2024-04-29 a las 11 33 22_0a52fda4](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/4c2b1433-ee8a-4d8e-8d4c-c51159ab3d45).
 y posteriormete se corre el script, lo cual nos dio los siguientes datos.
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/27411a1b-e445-400b-a055-94563453efd5)
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/27411a1b-e445-400b-a055-94563453efd5).
 Luego con estos datos realizamos un histograma.
 #### Procesamiento de datos y presentación de resultados
 Para cada grupo de datos se calculo la distancia media, la desviación estándar, el error absoluto y el error relativo respecto a la medida de distancia con flexómetro.
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/5058fe79-6714-4bb9-bae2-064d2bce663a)
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/5058fe79-6714-4bb9-bae2-064d2bce663a).
+
 Luego se realizo la gráfica de distancia contra índice de muestra.
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/d97c6726-fde6-4fc9-9ffd-72f470225bc1)
-Por utimo se realizan algunas gráficas de comportamiento de desviación estándar y errores absoluto y relativo en función de la distancia media.
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/2ea7ddfe-2818-4d50-825f-52aa8a2ddcf1)
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/c7f9b3af-7d3f-4f51-8e4d-f469155aaed6)
-![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/587bf13a-c00d-4c3f-94ae-7ff79d2ea04a)
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/d97c6726-fde6-4fc9-9ffd-72f470225bc1).
+
+Por utimo se realizan algunas gráficas de comportamiento de desviación estándar y errores absoluto y relativo en función de la distancia media.
+
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/2ea7ddfe-2818-4d50-825f-52aa8a2ddcf1).
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/c7f9b3af-7d3f-4f51-8e4d-f469155aaed6).
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/587bf13a-c00d-4c3f-94ae-7ff79d2ea04a).
 
 ###  Sensores Lego
 
