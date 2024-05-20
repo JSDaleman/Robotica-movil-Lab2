@@ -599,7 +599,6 @@ Las magnitudes que se usan para medir la dispersión de datos en estadística so
 - **Desviación estándar:** Es igual a la raíz cuadrada de la suma de los cuadrados de las desviaciones de la serie de datos partido por el número total de observaciones.
 - **Coeficiente de variación:** Es una medida de dispersión que sirve para determinar la dispersión de un conjunto de datos respecto a su media.
 - **Rango intercuartil:** Indica la diferencia entre el tercer y el primer cuartil.
-
 ### Lidar
 
 Usando el RPLIDAR A1M8
@@ -617,11 +616,78 @@ Datos capturados con el programa scanRPLIDAR.py
 
 
 ### Ultrasonido HC-SR04
+#### Preparacion
+Primeramente se subio el siguiente codigo usando el IDE de arduino:
+```
+// declaración de variables para pines
+const int pinecho = 11;
+const int pintrigger = 12;
+ 
+// variables para calculos
+unsigned long tiempo;
+float distancia;
+ 
+/**
+   Función setup: se ejecuta una vez cuando encendemos el arduino
+*/
+void setup()
+{
+  // preparar la comunicación serial
+  Serial.begin(9600);
+ 
+  // configurar los pines utilizados por el sensor
+  pinMode(pinecho, INPUT);
+  pinMode(pintrigger, OUTPUT);
+ 
+ }
+ 
+/**
+   Función loop: se ejecuta continuamente mientras el arduino permanece encendido
+*/
+void loop()
+{
+  // asegurarnos que el pin trigger se encuentra en estado bajo
+  digitalWrite(pintrigger, LOW);
+  delayMicroseconds(2);
+ 
+  // comenzamos pulso alto, debe durar 10 uS
+  // luego regresamos a estado bajo
+  digitalWrite(pintrigger, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pintrigger, LOW);
+ 
+  // medimos el tiempo en estado alto del pin "echo"
+  // el tiempo en estado alto es proporcional a la distancia medida
+  tiempo = pulseIn(pinecho, HIGH);
+ 
+  // LA VELOCIDAD DEL SONIDO ES DE 340 M/S O 29,4 MICROSEGUNDOS POR CENTIMETRO
+  // DIVIDIMOS EL TIEMPO DEL PULSO ENTRE 58, TIEMPO QUE TARDA RECORRER IDA Y
+  // VUELTA UN CENTIMETRO LA ONDA SONORA
+  distancia = float(tiempo) / 58.8;
+ 
+  // imprimir la distancia medida al monitor serial
+  //Serial.print(F("Distancia: "));
+ Serial.print(distancia);
+ Serial.print('\n');
+ // Serial.println(F(" cm"));
+ 
+  // esperar 0,25 segundos antes de realizar otra medición
+  delay(250);
+}
+
+```
+Se realizaron las conexiones de los pines del sensor a los pines del arduino uno, teniendo en cuenta que en este caso el pin echo es el 11 y el pin trigger es el 12 del arduino y que tienen que conectarse en el los pines echo y trigger del sensor, respectivamente.
+Luego se abrio la interfaz de matlab y se creo un script para colocar el siguiente codigo:
+```
+
+```
+El anterior codigo nos permite leer los primeros 100 datos seriales que nos suministre el sensor y guardarlos en un vector.
 
 ###  Sensores Lego
 
 #### Desplazamineto
 Para encontar la incertidumbre en el desplazamiento del robot con los encoder de los motores y el sensor de ultrasonido se hizo el siguiente montaje experimental donde se usa un flexometro o cinta metrica como patrón.
+
 
 ![Imagen de WhatsApp 2024-04-12 a las 22 03 10_ea68df87](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/dfffbc05-0613-4085-92e6-433e7413eeef)
 ![Imagen de WhatsApp 2024-04-12 a las 22 03 10_1a7d094a](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/6a870c9f-32e1-45fd-99d5-caaa2f58bd13)
