@@ -730,7 +730,7 @@ y posteriormete se corre el script, lo cual nos dio los siguientes datos.
 ![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/27411a1b-e445-400b-a055-94563453efd5).
 Luego con estos datos realizamos un histograma.
 #### Procesamiento de datos y presentación de resultados
-Para cada grupo de datos se calculo la distancia media, la desviación estándar, el error absoluto y el error relativo respecto a la medida de distancia con flexómetro.
+Para cada grupo de datos se calculo la distancia media, la desviación estándar, el error absoluto y el error relativo respecto a la medida de distancia con flexómetro.
 
 ![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/5058fe79-6714-4bb9-bae2-064d2bce663a).
 
