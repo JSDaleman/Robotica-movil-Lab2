@@ -36,6 +36,11 @@ Tabla de Contenidos
     - [Vocabulario según el VIM](#vocabulario-según-el-vim)
     - [Tipos de errores](#tipos-de-errores)
     - [Teoria estadistica](#tipos-de-errores)
+  - [Lidar](#lidar)
+  - [Ultrasonido HC-SR04](#ultrasonido-hc-sr04)
+    - [Preparacion](#preparacion)
+    - [Toma de datos](#toma-de-datos)
+    - [Procesamiento de datos y presentación de resultados](#procesamiento-de-datos-y-presentación-de-resultados)
   - [Sensores Lego](#sensores-lego).
     - [Desplazamineto](#desplazamineto).
     - [Giro de la rueda](#giro-de-la-rueda).
