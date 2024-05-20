@@ -647,7 +647,7 @@ Datos capturados con el programa scanRPLIDAR.py
 
 ### Ultrasonido HC-SR04
 #### Preparacion
-Primeramente se subio el codigo usando el IDE de arduino para el [ultrasonido](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Ultrasonido/usound3.ino) funcione con el arduino.
+Primeramente se subio el codigo al arduino usando el IDE de arduino para el [ultrasonido](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Ultrasonido/usound3.ino) funcione con el arduino.
 
 Se realizaron las conexiones de los pines del sensor a los pines del arduino uno, teniendo en cuenta que en este caso el pin echo es el 11 y el pin trigger es el 12 del arduino y que tienen que conectarse en el los pines echo y trigger del sensor, respectivamente.
 Luego se abrio la interfaz de matlab y se creo un script para optener y almacenar los [datos](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Ultrasonido/ultrasound3.m) de las para suy procesamiento.
