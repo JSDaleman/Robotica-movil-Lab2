@@ -679,9 +679,61 @@ void loop()
 Se realizaron las conexiones de los pines del sensor a los pines del arduino uno, teniendo en cuenta que en este caso el pin echo es el 11 y el pin trigger es el 12 del arduino y que tienen que conectarse en el los pines echo y trigger del sensor, respectivamente.
 Luego se abrio la interfaz de matlab y se creo un script para colocar el siguiente codigo:
 ```
+% ULTRASOUND3 programa para capturar datos por el puerto serial. Previo a
+% ejecutar el programa verifique mediante el Administrador de dispositivos
+% el puerto alque esta conectado el ARDUINO y modifique el numero de puerto 
+% en la instruccion PORT. Ricardo % Ramarez Heredia, Universidad Nacional 
+% de Colombia, 2023. 
 
+clear all;
+port=serialport('COM4',9600,'DataBits',8);
+flush(port)
+nm=100; %Numero de muestras.
+figure(1)
+clf
+xlabel('Muestra')
+ylabel('Distancia (cm)')
+title('U_{sound} Data')
+grid on;
+hold on;
+t=1:nm;
+dist=zeros(1,nm);
+for i=1:nm
+      dist(i)=readline(port); 
+      pause(.25)
+end
+plot(t,dist)
+delete(port);
+clear port
 ```
+#### Toma de datos
+
 El anterior codigo nos permite leer los primeros 100 datos seriales que nos suministre el sensor y guardarlos en un vector.
+
+Ahora y antes de correr el script de matlab, ubicamos un obtaculo a 1m.
+![Imagen de WhatsApp 2024-04-29 a las 11 25 26_238e8ffa](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/40bb4ccf-4f7f-4d57-9118-7c7ab31e1cff)
+y posteriormete se corre el script, lo cual nos dio los siguientes datos.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/f5f5f133-7e06-4666-ab42-fd5b05efb1e1)
+Luego con estos datos realizamos un histograma.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/38c3b58f-6cd1-436a-bfdd-4ebcab71375e)
+
+Ahora ubicamos un obtaculo a 1.5m.
+![Imagen de WhatsApp 2024-04-29 a las 11 28 26_50e38d44](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/5bd8bd31-aac9-472a-a9ba-09a60c232a35)
+y posteriormete se corre el script, lo cual nos dio los siguientes datos.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/d8c235aa-13f5-4b4e-be69-1e1793aa7e6f)
+Luego con estos datos realizamos un histograma.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/e5a484c6-da62-4cf5-ae2a-c0cdb8eda4bf)
+
+Y por ultimo ubicamos un obtaculo a 2m.
+![Imagen de WhatsApp 2024-04-29 a las 11 33 22_0a52fda4](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/4c2b1433-ee8a-4d8e-8d4c-c51159ab3d45)
+y posteriormete se corre el script, lo cual nos dio los siguientes datos.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/27411a1b-e445-400b-a055-94563453efd5)
+Luego con estos datos realizamos un histograma.
+#### Procesamiento de datos y presentación de resultados
+Para cada grupo de datos se calculo la distancia media, la desviación estándar, el error absoluto y el error relativo respecto a la medida de distancia con flexómetro.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/5058fe79-6714-4bb9-bae2-064d2bce663a)
+Luego se realizo la gráfica de distancia contra índice de muestra.
+![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/d97c6726-fde6-4fc9-9ffd-72f470225bc1)
 
 ###  Sensores Lego
 
