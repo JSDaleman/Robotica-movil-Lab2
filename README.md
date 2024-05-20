@@ -277,6 +277,14 @@ Para poder conectar el lego EV3 con ROS primero se necesita tener una memoria SD
   
   Para crear la SD booteable se siguieron los pasos de la pagina de ev3dev [SD booteable](https://www.ev3dev.org/docs/getting-started/). Una vez con la antena colocada en el robot y la SD se prende este y se espera que se inicialice el sistema.
 
+**Actualización apt**
+
+Dado que la imagen del ev3dev puede tener algunos problemas con el apt este se puede actualizar para que coincida con la [versión actualizada](https://github.com/ev3dev/docker-library/blob/master/ev3dev-stretch/layers/debian/etc/apt/sources.list). Para esto solo debemos el contenido del archivo y pegarlo en el archivo del sistema ev3dev para acceder al archivo se usa el siguiente comando
+
+```
+sudo nano /etc/apt/sources.list
+```
+
 ### Conexión al PC via wifi
 Para esta conexión se puede hacer por dos vias la primera es configurar manualmente la red wifi a la cual se conectara o configurandola por medio del pc por conexión [bluethoot](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/) o [USB](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/). Una vez configurada nos podremos conectar al robot atravez de esta en el PC usando una conexión [SSH](https://www.ev3dev.org/docs/tutorials/connecting-to-ev3dev-with-ssh/).Para esto lanzaremos una terminal y mandaremos el siguente comando
 
@@ -400,7 +408,24 @@ mkdir MQTT
 cd ~/pruebas/python/MQTT
 ```
 
-luego copiaremos como se ha mostrado anteriormente todos los archivos del robot
+luego copiaremos como se ha mostrado anteriormente todos los archivos del robot. Para que funcione correctamente el cliente MQTT usa la libreria de python paho para instalarla en el robot es necesario primero tener el archivo apt del robot actualizado como se mostro en la parte de cración de booteo. 
+
+Para instalar la liberia es necesario tener el pip de python en el robot para etso se usan los siguientes comandos
+
+```
+sudo apt-get update
+sudo apt-get install python3-pip
+sudo apt-get install python-pip
+pip3 --version
+pip --version
+```
+
+para intalar la libreria se usa el siguiente comando
+
+```
+sudo pip3 install paho-mqtt
+sudo pip install paho-mqtt
+```
 
 #### Compilación del paquete
 los archivos en la carpeta de [scripts](https://github.com/JSDaleman/Robotica-movil-Lab2/tree/Cambios-lab2/Scripts/Parte%20B%20Ev3/ev3dev_ros/scripts) los copiaremos en el paquete creado de ev3dev_ros de tal forma que quede la siguiente organización de los archivos.
