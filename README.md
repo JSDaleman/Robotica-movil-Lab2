@@ -647,95 +647,11 @@ Datos capturados con el programa scanRPLIDAR.py
 
 ### Ultrasonido HC-SR04
 #### Preparacion
-Primeramente se subio el siguiente codigo usando el IDE de arduino:
-```
-// declaración de variables para pines
-const int pinecho = 11;
-const int pintrigger = 12;
- 
-// variables para calculos
-unsigned long tiempo;
-float distancia;
- 
-/**
-   Función setup: se ejecuta una vez cuando encendemos el arduino
-*/
-void setup()
-{
-  // preparar la comunicación serial
-  Serial.begin(9600);
- 
-  // configurar los pines utilizados por el sensor
-  pinMode(pinecho, INPUT);
-  pinMode(pintrigger, OUTPUT);
- 
- }
- 
-/**
-   Función loop: se ejecuta continuamente mientras el arduino permanece encendido
-*/
-void loop()
-{
-  // asegurarnos que el pin trigger se encuentra en estado bajo
-  digitalWrite(pintrigger, LOW);
-  delayMicroseconds(2);
- 
-  // comenzamos pulso alto, debe durar 10 uS
-  // luego regresamos a estado bajo
-  digitalWrite(pintrigger, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(pintrigger, LOW);
- 
-  // medimos el tiempo en estado alto del pin "echo"
-  // el tiempo en estado alto es proporcional a la distancia medida
-  tiempo = pulseIn(pinecho, HIGH);
- 
-  // LA VELOCIDAD DEL SONIDO ES DE 340 M/S O 29,4 MICROSEGUNDOS POR CENTIMETRO
-  // DIVIDIMOS EL TIEMPO DEL PULSO ENTRE 58, TIEMPO QUE TARDA RECORRER IDA Y
-  // VUELTA UN CENTIMETRO LA ONDA SONORA
-  distancia = float(tiempo) / 58.8;
- 
-  // imprimir la distancia medida al monitor serial
-  //Serial.print(F("Distancia: "));
- Serial.print(distancia);
- Serial.print('\n');
- // Serial.println(F(" cm"));
- 
-  // esperar 0,25 segundos antes de realizar otra medición
-  delay(250);
-}
+Primeramente se subio el codigo usando el IDE de arduino para el [ultrasonido](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Ultrasonido/usound3.ino) funcione con el arduino.
 
-```
 Se realizaron las conexiones de los pines del sensor a los pines del arduino uno, teniendo en cuenta que en este caso el pin echo es el 11 y el pin trigger es el 12 del arduino y que tienen que conectarse en el los pines echo y trigger del sensor, respectivamente.
-Luego se abrio la interfaz de matlab y se creo un script para colocar el siguiente codigo:
-```
-% ULTRASOUND3 programa para capturar datos por el puerto serial. Previo a
-% ejecutar el programa verifique mediante el Administrador de dispositivos
-% el puerto alque esta conectado el ARDUINO y modifique el numero de puerto 
-% en la instruccion PORT. Ricardo % Ramarez Heredia, Universidad Nacional 
-% de Colombia, 2023. 
+Luego se abrio la interfaz de matlab y se creo un script para optener y almacenar los [datos](https://github.com/JSDaleman/Robotica-movil-Lab2/blob/Cambios-lab2/Scripts/Ultrasonido/ultrasound3.m) de las para suy procesamiento.
 
-clear all;
-port=serialport('COM4',9600,'DataBits',8);
-flush(port)
-nm=100; %Numero de muestras.
-figure(1)
-clf
-xlabel('Muestra')
-ylabel('Distancia (cm)')
-title('U_{sound} Data')
-grid on;
-hold on;
-t=1:nm;
-dist=zeros(1,nm);
-for i=1:nm
-      dist(i)=readline(port); 
-      pause(.25)
-end
-plot(t,dist)
-delete(port);
-clear port
-```
 #### Toma de datos
 
 El anterior codigo nos permite leer los primeros 100 datos seriales que nos suministre el sensor y guardarlos en un vector.
@@ -759,6 +675,7 @@ Y finalmente ubicamos un obtaculo a 2m.
 y posteriormete se corre el script, lo cual nos dio los siguientes datos.
 ![image](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/125931563/27411a1b-e445-400b-a055-94563453efd5).
 Luego con estos datos realizamos un histograma.
+
 #### Procesamiento de datos y presentación de resultados
 Para cada grupo de datos se calculo la distancia media, la desviación estándar, el error absoluto y el error relativo respecto a la medida de distancia con flexómetro.
 
