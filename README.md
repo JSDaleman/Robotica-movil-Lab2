@@ -592,8 +592,52 @@ rostopic list
 
 Dentro de las funciones que tenemos con estos comandos esta el subscribirse y publicar eventos asociados a ciertos sensores del Robot y entradas digitales del mismo, asi como tambien ofrece la posibilidad de verificar el nivel de bateria.
 
+Utilizando el paquete kobuki_keyop para aplicar teleoperación básica en el kobuki:
+
+![Terminal de conexión](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/b52a08f8-759d-4cc0-b55f-c66ee7381388)
 
 
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/bb2c6317-a187-4361-9e7f-d92b1f3fe066
+
+### Sensor cliff
+
+Codigo en Python:
+
+```
+import rospy
+from kobuki_msgs.msg import CliffEvent, Sound
+import subprocess
+
+def accion (data):
+    rospy.loginfo("Evento de caida detectado: %s", data)
+    sonido(5) 
+
+def sensor():
+    rospy.init_node('cliff_listener', anonymous=True)
+    rospy.Subscriber("/mobile_base/events/cliff", CliffEvent, accion)
+    rospy.spin()
+
+def sonido(sound_value):
+    pub_sound = rospy.Publisher('/mobile_base/commands/sound', Sound, queue_size=10)
+    sound_msg = Sound()
+    sound_msg.value = sound_value
+    pub_sound.publish(sound_msg)
+
+def launch_roslaunch_file(package_name, launch_file):
+    command = ['roslaunch', package_name, launch_file, '--screen']
+    subprocess.Popen(command)
+
+if __name__ == '__main__':
+    try:
+        launch_roslaunch_file('kobuki_keyop', 'safe_keyop.launch')
+        sensor()
+    except rospy.ROSInterruptException:
+        pass
+```
+
+Prueba de funcionamiento:
+
+https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/dcee9057-10f2-4529-aca3-cc5b3aa43d3c
 
 ## Incertidumbre en sensores
 
