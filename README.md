@@ -30,6 +30,12 @@ Tabla de Contenidos
     - [Compilación del paquete](#compilación-del-paquete).
   - [Ejecución](#ejecucion).
   - [Conclusiones de la implementación](e#conclusiones-de-la-implementación).
+- [Conexion Kobuki con ROS](#conexion-kobuki-con-ros).
+  - [Creacion del workspace](#creacion-del-workspace-1).
+  - [Clonacion de repositorios para la conexion y compilacion](#clonacion-de-repositorios-para-la-conexion-y-compilacion).
+  - [Preparacion robot Kobuki](#preparacion-robot-kobuki).
+  - [Configuracion final del espacio](#configuracion-final-del-espacio).
+  - [Sensor cliff](#sensor-cliff).
 - [Incertidumbre en sensores](#incertidumbre-en-sensores).
   - [Consulta bibliografica](#consulta-bibliográfica).
     - [¿ Qué es el Vocabulario Internacional de Metrología (VIM)?](#-qué-es-el-vocabulario-internacional-de-metrología-vim)
@@ -512,7 +518,7 @@ https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/46a48ef9-ab9e-4
 
 ## Conexion Kobuki con ROS
 
-#### Creacion del workspace
+### Creacion del workspace
 
 Se crea un directrotio que sera el workspace en dondde se estara trabajando y contendra nuestros archivos de intalación, adicional se genera una carpeta scr para ingresqar alli el directorio
 
