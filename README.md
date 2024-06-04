@@ -680,8 +680,38 @@ Las magnitudes que se usan para medir la dispersión de datos en estadística so
 - **Coeficiente de variación:** Es una medida de dispersión que sirve para determinar la dispersión de un conjunto de datos respecto a su media.
 - **Rango intercuartil:** Indica la diferencia entre el tercer y el primer cuartil.
 ### Lidar
+#### Sensor HOKUYO
 
-Usando el RPLIDAR A1M8
+Se construye un mapa y se coloca el sensor HOKUYO en tres poses distintas:
+
+Pose 1:
+
+![Pose1O](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/73b200a0-0ac7-4455-8d1b-96109321c96d)
+
+Pose 2:
+
+![Pose2O](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/27e7fa87-0ed0-4515-8cb3-a861a6103ad4)
+
+Pose 3:
+
+![Pose3O](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/433e9847-7503-4f2c-bfca-384beafa2fe4)
+
+
+Usando el programa URG Benri data viewing tool, se realizo la configuracion del sensor y la medición del pasa construido en las tres distintas poses.
+
+Pose 1:
+
+![Captura1](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/8efe52e4-1f2f-46ad-bf56-751600627726)
+
+Pose 2:
+
+![Captura2](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/89be178f-a164-4e30-be7f-b3404ade67fa)
+
+Pose 3:
+
+![Captura3](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/a22f1c3d-bc19-42b3-980c-9911e8b1ca24)
+
+#### RPLIDAR A1M8
 
 ![IMG_20240429_104106578](https://github.com/JSDaleman/Robotica-movil-Lab2/assets/68557324/1c0eb40f-80e7-4f98-90ba-1ec0b1537172)
 
