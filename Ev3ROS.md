@@ -26,6 +26,7 @@ Tabla de Contenidos
     - [Compilación del paquete](#compilación-del-paquete).
   - [Ejecución](#ejecucion).
   - [Conclusiones de la implementación](e#conclusiones-de-la-implementación).
+- [Otros links de interes](#Otros-links-de-interes).
 
 ## Conexión Lego EV3 con ROS
 
@@ -301,3 +302,17 @@ https://github.com/JSDaleman/Robotica-movil-Lab2/assets/70998067/46a48ef9-ab9e-4
 * La integración con ROS por medio de la comunicación MQTT permite que el robot no sature su procesador interno pemitiendo tener una respuesta rapida a muchos de sus elementos.
 * Dado que la comunicación MQTT no depende de ROS se podria llegar a implementar un nodo parecido de funcionamiento con ROS2.
 * Con el manejo del robot EV3 con esta integracion con ROS se abre la posiblidad de integrarle otros sensores o procesamiento de información para realizar acciones muy grande usando el procesamiento de una computadora como nodo Master de ROS.
+
+
+## Otros links de interes
+* [Conexion de Lego Ev3 por medio de una raspberry pi](https://github.com/aws-samples/aws-builders-fair-projects/blob/master/reinvent-2019/lego-ev3-raspberry-pi-robot/README.MD) 
+* [ROS desde el Lego Ev3](https://github.com/moriarty/ros-ev3)
+* [Manaje con python ev3dev](https://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/latest/)
+* [Manejo de motores del Ev3 con Python](https://www.youtube.com/watch?v=j0-ATIe6pqg) 
+* [Uso de sensor lidar con Ev3](https://www.youtube.com/watch?v=JX0zeYa-faM) 
+* [Programacion y conexion SSH desde Visual Studio Code con Ev3](https://www.youtube.com/watch?v=uNSIOvqzAnY) 
+* [Instalacion de ROS distribucion JADE en el Ev3](https://github.com/osmado/ev3dev_ros_distribution) 
+* [ROS blog sobre lego Ev3](http://wiki.ros.org/Robots/EV3)
+* [Conexión Ev3 y arduino](https://www.dexterindustries.com/howto/connecting-ev3-arduino/)
+* [Manejo con ROS de Ev3 con C++](https://www.youtube.com/watch?v=iRQqEKYDRI4)
+* [Github manejo con ROS de Ev3 con C++](https://github.com/srmanikandasriram/ev3-ros?tab=readme-ov-file)
